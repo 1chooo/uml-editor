@@ -1,4 +1,4 @@
-package examples;
+package ToyExample;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;

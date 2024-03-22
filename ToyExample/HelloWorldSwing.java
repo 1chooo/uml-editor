@@ -1,4 +1,4 @@
-package examples;
+package ToyExample;
 import javax.swing.*;
 public class HelloWorldSwing {
     /**{
