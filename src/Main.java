@@ -1,15 +1,11 @@
 package src;
 
-import src.components.TestComponents;
+import src.Pages.CtoF;
 
 public class Main {
 
     public static void main(String[] args) {
-        // show the GUI
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                TestComponents.createAndShowGUI();
-            }
-        });
+        new CtoF();
     }
 }
+
