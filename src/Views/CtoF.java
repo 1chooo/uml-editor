@@ -1,4 +1,4 @@
-package src.Pages;
+package src.Views;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

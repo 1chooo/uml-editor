@@ -1,11 +1,9 @@
 package src;
 
-import src.Pages.CtoF;
+import src.Views.WaterApp;
 
 public class Main {
-
     public static void main(String[] args) {
-        new CtoF();
+        new WaterApp().setVisible(true);
     }
 }
-
