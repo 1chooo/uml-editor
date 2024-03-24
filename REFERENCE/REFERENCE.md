@@ -2,6 +2,7 @@
 - [Java Swing 介绍](https://www.runoob.com/w3cnote/java-swing-demo-intro.html)
 - [Java Swing](https://zetcode.com/javaswing/)
 - [Using Swing Components: Examples](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html)
+- [Java Swing Hello World Tutorial for Beginners Using Text Editor](https://www.codejava.net/java-se/swing/java-swing-hello-world-tutorial-for-beginners-using-text-editor)
 
 
 ## Java Swing Projects
