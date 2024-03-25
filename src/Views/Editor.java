@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import src.Components.Menu;
+import src.Utils.StatusCode;
 
 public class Editor extends JFrame implements ActionListener {
     private int width = 1280;
@@ -31,7 +32,7 @@ public class Editor extends JFrame implements ActionListener {
                 // Check if the user pressed Ctrl+Q (for Windows) or Command+Q (for Mac)
                 if ((e.getKeyCode() == KeyEvent.VK_Q) &&
                         ((e.getModifiersEx() & KeyEvent.CTRL_DOWN_MASK) != 0)) {
-                    dispose(); // Close the window
+                    System.exit(StatusCode.EXIT);
                 }
                 return false;
             }
