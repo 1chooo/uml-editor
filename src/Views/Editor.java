@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class WaterApp extends JFrame implements ActionListener{
+public class Editor extends JFrame implements ActionListener{
     private int width = 1280;
     private int height = 720;
 
@@ -13,13 +13,25 @@ public class WaterApp extends JFrame implements ActionListener{
     private JTextField fieldWeight;
     private JButton buttonTellMe;
  
-    public WaterApp() {
-        super("Water Calculator");
+    public Editor() {
+        super("XML Editor");
  
         initComponents();
  
         setSize(width, height);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Enroll the Keyboard Listener
+        KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(new KeyEventDispatcher() {
+            @Override
+            public boolean dispatchKeyEvent(KeyEvent e) {
+                // Check if the user pressed Ctrl+Q (for Windows) or Command+Q (for Mac)
+                if ((e.getKeyCode() == KeyEvent.VK_Q) && ((e.getModifiersEx() & KeyEvent.CTRL_DOWN_MASK) != 0)) {
+                    dispose();  // Close the window
+                }
+                return false;
+            }
+        });
     }
  
     private void initComponents() {

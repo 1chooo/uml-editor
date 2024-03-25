@@ -1,9 +1,9 @@
 package src;
 
-import src.Views.WaterApp;
+import src.Views.Editor;
 
 public class Main {
     public static void main(String[] args) {
-        new WaterApp().setVisible(true);
+        new Editor().setVisible(true);
     }
 }
