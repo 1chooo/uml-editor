@@ -5,7 +5,14 @@ package src.Views;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+
 import src.Components.Menu;
+import src.Components.SideButton.AssociationLineButton;
+import src.Components.SideButton.ClassButton;
+import src.Components.SideButton.CompositionLineButton;
+import src.Components.SideButton.GenerationLineButton;
+import src.Components.SideButton.SelectButton;
+import src.Components.SideButton.UseCaseButton;
 import src.Utils.StatusCode;
 
 public class Editor extends JFrame implements ActionListener {
@@ -40,17 +47,33 @@ public class Editor extends JFrame implements ActionListener {
     }
 
     private void initComponents() {
-        Menu menu;
+        Menu menu = new Menu();
 
         labelQuestion = new JLabel("How much water should I drink?");
         labelWeight = new JLabel("My weight (kg):");
         fieldWeight = new JTextField(5);
         buttonTellMe = new JButton("Tell Me");
-        menu = new Menu();
+
+        SelectButton selectButton = new SelectButton();
+        AssociationLineButton associationLineButton = new AssociationLineButton();
+        GenerationLineButton generationLineButton = new GenerationLineButton();
+        CompositionLineButton compositionLineButton = new CompositionLineButton();
+        ClassButton classButton = new ClassButton();
+        UseCaseButton useCaseButton = new UseCaseButton();
 
         setLayout(new BorderLayout());
 
         add(menu.getMenuBar(), BorderLayout.NORTH);
+
+        // Panel for SelectButtons at the left
+        JPanel selectPanel = new JPanel(new GridLayout(0, 1)); // GridLayout with 1 row and multiple columns
+        selectPanel.add(selectButton.getSelectButton());
+        selectPanel.add(associationLineButton.getAssociationLineButton());
+        selectPanel.add(generationLineButton.getGenerationLineButton());
+        selectPanel.add(compositionLineButton.getCompositionLineButton());
+        selectPanel.add(classButton.getClassButton());
+        selectPanel.add(useCaseButton.getUseCaseButton());
+        add(selectPanel, BorderLayout.WEST);
 
         JPanel contentPanel = new JPanel(); // Create a content panel
         contentPanel.setLayout(new FlowLayout()); // use FlowLayout to layout the components
