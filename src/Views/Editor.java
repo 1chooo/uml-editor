@@ -26,7 +26,8 @@ public class Editor extends JFrame implements ActionListener{
             @Override
             public boolean dispatchKeyEvent(KeyEvent e) {
                 // Check if the user pressed Ctrl+Q (for Windows) or Command+Q (for Mac)
-                if ((e.getKeyCode() == KeyEvent.VK_Q) && ((e.getModifiersEx() & KeyEvent.CTRL_DOWN_MASK) != 0)) {
+                if ((e.getKeyCode() == KeyEvent.VK_Q) && 
+                    ((e.getModifiersEx() & KeyEvent.CTRL_DOWN_MASK) != 0)) {
                     dispose();  // Close the window
                 }
                 return false;
