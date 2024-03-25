@@ -35,14 +35,19 @@ public class Menu implements ActionListener {
     }
 
     private JMenu createMenu(String name) {
-        return new JMenu(name);
+        JMenu menu;
+        menu = new JMenu(name);
+
+        return menu;
     }
 
     private JMenuBar createMenuBar(JMenu... menus) {
-        JMenuBar menuBar = new JMenuBar();
-        for (JMenu menu : menus) {
+        JMenuBar menuBar;
+        menuBar = new JMenuBar();
+        
+        for (JMenu menu : menus)
             menuBar.add(menu);
-        }
+        
         return menuBar;
     }
 
