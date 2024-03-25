@@ -458,6 +458,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#status-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Status Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#keyboard-listener" class="md-nav__link">
     <span class="md-ellipsis">
       Keyboard Listener
@@ -576,6 +585,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#status-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Status Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#keyboard-listener" class="md-nav__link">
     <span class="md-ellipsis">
       Keyboard Listener
@@ -618,6 +636,16 @@
 
 
 <h1 id="wiki">Wiki<a class="headerlink" href="#wiki" title="Permanent link">&para;</a></h1>
+<h2 id="status-code">Status Code<a class="headerlink" href="#status-code" title="Permanent link">&para;</a></h2>
+<p>in <code>src/Utils/StatusCode.java</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StatusCode</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">OK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">EXIT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="keyboard-listener">Keyboard Listener<a class="headerlink" href="#keyboard-listener" title="Permanent link">&para;</a></h2>
 <h3 id="exit-the-app">Exit the APP<a class="headerlink" href="#exit-the-app" title="Permanent link">&para;</a></h3>
 <p>Press <code>Ctrl + Q</code> (for Windows) or <code>Command + Q</code> (for Mac) to exit the APP.</p>
@@ -637,7 +665,7 @@
 <span class="w">        </span><span class="c1">// Check if the user pressed Ctrl+Q (for Windows) or Command+Q (for Mac)</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">e</span><span class="p">.</span><span class="na">getKeyCode</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">KeyEvent</span><span class="p">.</span><span class="na">VK_Q</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>
 <span class="w">            </span><span class="p">((</span><span class="n">e</span><span class="p">.</span><span class="na">getModifiersEx</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">KeyEvent</span><span class="p">.</span><span class="na">CTRL_DOWN_MASK</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">dispose</span><span class="p">();</span><span class="w">  </span><span class="c1">// Close the window</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">exit</span><span class="p">(</span><span class="n">StatusCode</span><span class="p">.</span><span class="na">EXIT</span><span class="p">);</span><span class="w">  </span><span class="c1">// Close the window</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
