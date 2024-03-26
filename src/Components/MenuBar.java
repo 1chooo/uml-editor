@@ -1,69 +1,43 @@
-// src/Components/Menu.java
-
 package src.Components;
 
 import javax.swing.*;
-import java.awt.event.*;
-import src.Utils.StatusCode;
 
-public class MenuBar implements ActionListener {
-    private JMenuBar menuBar;
-    private JMenu xmlEditor, file, edit, help;
-    private JMenuItem about, quit;
+import src.Actions.MenuItemAction;
 
+public class MenuBar extends JMenuBar {
+    // private variables
+    private JMenu xmlEditor;
+    private JMenu edit;
+    private JMenu file;
+    private JMenu help;
+
+    // Constructor
     public MenuBar() {
-        xmlEditor = createMenu("XML Editor");
-        file = createMenu("File");
-        edit = createMenu("Edit");
-        help = createMenu("Help");
-        
-        about = createMenuItem("About XML Editor");
-        quit = createMenuItem("Quit (Control + Q)");
-
-        xmlEditor.add(about);
-        xmlEditor.add(quit);
-
-        menuBar = createMenuBar(xmlEditor, file, edit, help);
+        initComponents();
     }
 
-    private JMenuItem createMenuItem(String name) {
-        JMenuItem menuItem;
-        menuItem = new JMenuItem(name);
-        menuItem.addActionListener(this);
+    // private methods
+    private void initComponents() {
+        xmlEditor = new JMenu("XML Editor");
+        xmlEditor.add(new MenuItem("About XML Editor"));
+        xmlEditor.add(new MenuItem("Quit (Control + Q)"));
+        add(xmlEditor);
 
-        return menuItem;
+        edit = new JMenu("Edit");
+        add(edit);
+
+        file = new JMenu("File");
+        add(file);
+
+        help = new JMenu("Help");
+        add(help);
     }
 
-    private JMenu createMenu(String name) {
-        JMenu menu;
-        menu = new JMenu(name);
-
-        return menu;
-    }
-
-    private JMenuBar createMenuBar(JMenu... menus) {
-        JMenuBar menuBar;
-        menuBar = new JMenuBar();
-        
-        for (JMenu menu : menus)
-            menuBar.add(menu);
-        
-        return menuBar;
-    }
-
-    public JMenuBar getMenuBar() {
-        return menuBar;
-    }
-
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == quit)
-            System.exit(StatusCode.EXIT);
-        if (e.getSource() == about) {
-            String message = "Hello World! This is a simple XML Editor.";
-
-            message = String.format(message);
-
-            JOptionPane.showMessageDialog(null, message);
+    private class MenuItem extends JMenuItem {
+        public MenuItem(String name) {
+            super(name);
+            addActionListener(new MenuItemAction());
         }
     }
+
 }
