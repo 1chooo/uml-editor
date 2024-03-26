@@ -81,8 +81,8 @@ extra:
 
 nav:
     - Overview: README.md
-    - Requirements: REQUIREMENTS.md
-    - Wiki: WIKI.md
+    - Requirements: requirements.md
+    - Wiki: wiki.md
     - LICENSE: LICENSE.md
-    - Reference: REFERENCE.md
+    - Reference: reference.md
     - Report Issues: https://github.com/1chooo/uml-editor/issues
