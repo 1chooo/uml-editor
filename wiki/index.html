@@ -752,22 +752,9 @@
 <span class="normal">24</span>
 <span class="normal">25</span>
 <span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MenuBar</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">JMenuBar</span><span class="w"> </span><span class="p">{</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MenuBar</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">JMenuBar</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// private variables</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">JMenu</span><span class="w"> </span><span class="n">xmlEditor</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">JMenu</span><span class="w"> </span><span class="n">edit</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">JMenu</span><span class="w"> </span><span class="n">file</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">JMenu</span><span class="w"> </span><span class="n">help</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">JMenu</span><span class="w"> </span><span class="n">yourMenu</span><span class="p">;</span>
 
 <span class="w">    </span><span class="c1">// Constructor</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">MenuBar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -776,19 +763,12 @@
 
 <span class="w">    </span><span class="c1">// private methods</span>
 <span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initComponents</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">xmlEditor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">JMenu</span><span class="p">(</span><span class="s">&quot;XML Editor&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="n">xmlEditor</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MenuItem</span><span class="p">(</span><span class="s">&quot;About XML Editor&quot;</span><span class="p">));</span>
-<span class="w">        </span><span class="n">xmlEditor</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MenuItem</span><span class="p">(</span><span class="s">&quot;Quit (Control + Q)&quot;</span><span class="p">));</span>
-<span class="w">        </span><span class="n">add</span><span class="p">(</span><span class="n">xmlEditor</span><span class="p">);</span>
+<span class="w">        </span><span class="n">yourMenu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">JMenu</span><span class="p">(</span><span class="s">&quot;YOU MENU&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">yourMenu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MenuItem</span><span class="p">(</span><span class="s">&quot;YOUR MENU ITEM 1&quot;</span><span class="p">));</span>
+<span class="w">        </span><span class="n">yourMenu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MenuItem</span><span class="p">(</span><span class="s">&quot;YOUR MENU ITEM 2&quot;</span><span class="p">));</span>
+<span class="w">        </span><span class="n">add</span><span class="p">(</span><span class="n">yourMenu</span><span class="p">);</span>
 
-<span class="w">        </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">JMenu</span><span class="p">(</span><span class="s">&quot;Edit&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="n">add</span><span class="p">(</span><span class="n">edit</span><span class="p">);</span>
-
-<span class="w">        </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">JMenu</span><span class="p">(</span><span class="s">&quot;File&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="n">add</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
-
-<span class="w">        </span><span class="n">help</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">JMenu</span><span class="p">(</span><span class="s">&quot;Help&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="n">add</span><span class="p">(</span><span class="n">help</span><span class="p">);</span>
+<span class="w">        </span><span class="p">...</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MenuItem</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">JMenuItem</span><span class="w"> </span><span class="p">{</span>

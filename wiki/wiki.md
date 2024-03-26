@@ -16,10 +16,7 @@ When creating a Menu Bar using the `MenuBar` class, we can add `JMenu` and `JMen
 ```java
 public class MenuBar extends JMenuBar {
     // private variables
-    private JMenu xmlEditor;
-    private JMenu edit;
-    private JMenu file;
-    private JMenu help;
+    private JMenu yourMenu;
 
     // Constructor
     public MenuBar() {
@@ -28,19 +25,12 @@ public class MenuBar extends JMenuBar {
 
     // private methods
     private void initComponents() {
-        xmlEditor = new JMenu("XML Editor");
-        xmlEditor.add(new MenuItem("About XML Editor"));
-        xmlEditor.add(new MenuItem("Quit (Control + Q)"));
-        add(xmlEditor);
+        yourMenu = new JMenu("YOU MENU");
+        yourMenu.add(new MenuItem("YOUR MENU ITEM 1"));
+        yourMenu.add(new MenuItem("YOUR MENU ITEM 2"));
+        add(yourMenu);
 
-        edit = new JMenu("Edit");
-        add(edit);
-
-        file = new JMenu("File");
-        add(file);
-
-        help = new JMenu("Help");
-        add(help);
+        ...
     }
 
     private class MenuItem extends JMenuItem {
