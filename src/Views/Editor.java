@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-import src.Components.Menu;
+import src.Components.MenuBar;
 import src.Components.SideButton.AssociationLineButton;
 import src.Components.SideButton.ClassButton;
 import src.Components.SideButton.CompositionLineButton;
@@ -47,7 +47,7 @@ public class Editor extends JFrame implements ActionListener {
     }
 
     private void initComponents() {
-        Menu menu = new Menu();
+        MenuBar menu = new MenuBar();
 
         labelQuestion = new JLabel("How much water should I drink?");
         labelWeight = new JLabel("My weight (kg):");

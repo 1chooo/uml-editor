@@ -6,12 +6,12 @@ import javax.swing.*;
 import java.awt.event.*;
 import src.Utils.StatusCode;
 
-public class Menu implements ActionListener {
+public class MenuBar implements ActionListener {
     private JMenuBar menuBar;
     private JMenu xmlEditor, file, edit, help;
     private JMenuItem about, quit;
 
-    public Menu() {
+    public MenuBar() {
         xmlEditor = createMenu("XML Editor");
         file = createMenu("File");
         edit = createMenu("Edit");
