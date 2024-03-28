@@ -83,11 +83,11 @@ nav:
     - Overview: README.md
     - Requirements: requirements.md
     - Wiki: 
-        - wiki.md
-        - components.md
-        - keyboard-listener.md
-        - status-code.md
-        - actions.md
+        - wiki/wiki.md
+        - wiki/components.md
+        - wiki/keyboard-listener.md
+        - wiki/status-code.md
+        - wiki/actions.md
     - LICENSE: LICENSE.md
     - Reference: reference.md
     - Report Issues: https://github.com/1chooo/uml-editor/issues
