@@ -8,7 +8,7 @@ import java.awt.GridLayout;
 import java.awt.Dimension;
 
 public class SidePanel extends JPanel {
-
+    // constructor
     public SidePanel() {
         initComponents();
     }
@@ -25,7 +25,9 @@ public class SidePanel extends JPanel {
         add(new SideButton("imgs/use-case.png"));
     }
 
+    // private class
     private class SideButton extends JButton {
+        // constructor
         public SideButton(String imgPath) {
             super(new ImageIcon(imgPath));
             setButtonSize();
@@ -33,6 +35,7 @@ public class SidePanel extends JPanel {
             addActionListener(e -> actionListener());
         }
 
+        // private methods
         private void setButtonSize() {
             int width = getIcon().getIconWidth();
             int height = getIcon().getIconHeight();
@@ -42,12 +45,7 @@ public class SidePanel extends JPanel {
         }
 
         private void actionListener() {
-            String buttonName = getName();
-            JOptionPane.showMessageDialog(null, "This is " + buttonName + " button. It is clicked.");
-        }
-
-        public String getName() {
-            return getText();
+            JOptionPane.showMessageDialog(null, "You clicked the button.");
         }
     }
 }
