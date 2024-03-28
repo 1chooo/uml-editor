@@ -21,7 +21,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://1chooo.github.io/uml-editor/wiki/</loc>
+         <loc>https://1chooo.github.io/uml-editor/wiki/actions/</loc>
+         <lastmod>2024-03-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://1chooo.github.io/uml-editor/wiki/components/</loc>
+         <lastmod>2024-03-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://1chooo.github.io/uml-editor/wiki/keyboard-listener/</loc>
+         <lastmod>2024-03-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://1chooo.github.io/uml-editor/wiki/status-code/</loc>
+         <lastmod>2024-03-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://1chooo.github.io/uml-editor/wiki/wiki/</loc>
          <lastmod>2024-03-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
