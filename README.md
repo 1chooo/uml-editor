@@ -1,9 +1,4 @@
-# Mob Programming: UML Editor
-
-## Team Members
-| Name | Student ID | Department | 
-| --- | --- | --- |
-| [Hugo ChunHo Lin](https://1chooo.com) | 109601003 | ATM |
+# UML Editor
 
 ## How to build and run the project
 
