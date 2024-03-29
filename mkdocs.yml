@@ -83,7 +83,6 @@ nav:
     - Overview: README.md
     - Requirements: requirements.md
     - Wiki: 
-        - wiki/wiki.md
         - wiki/components.md
         - wiki/keyboard-listener.md
         - wiki/status-code.md
