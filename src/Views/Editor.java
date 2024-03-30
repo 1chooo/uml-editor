@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 
 import src.Components.MenuBar;
+import src.Components.ModeStatus;
 import src.Components.SidePanel;
 import src.Components.Canvas;
 import src.Utils.KeyboardListener;
@@ -31,6 +32,9 @@ public class Editor extends JFrame {
 
         JPanel sidePanel = new SidePanel();
         add(sidePanel, BorderLayout.WEST);
+
+        JLabel modeStatus = new ModeStatus();
+        add(modeStatus, BorderLayout.SOUTH);
 
         JPanel canvas = Canvas.GetInstance();
         add(canvas, BorderLayout.CENTER);
