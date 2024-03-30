@@ -5,8 +5,10 @@ import java.awt.event.*;
 import src.Utils.StatusCode;
 
 public class MenuItemAction extends JMenu implements ActionListener {
+    // constructor
     public MenuItemAction() { }
 
+    // public methods
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("About XML Editor")) {
             aboutAction(e);
@@ -15,6 +17,7 @@ public class MenuItemAction extends JMenu implements ActionListener {
         }
     }
 
+    // private methods
     private void aboutAction(ActionEvent e) {
         String message = "Hello World! This is a simple XML Editor.";
         JOptionPane.showMessageDialog(null, message);
