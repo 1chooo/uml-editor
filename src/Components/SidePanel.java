@@ -27,21 +27,16 @@ public class SidePanel extends JPanel {
 
     // private class
     private class SideButton extends JButton {
+        // private variables
+        private int width = 120;
+        private int height = 80;
+
         // constructor
         public SideButton(String imgPath) {
             super(new ImageIcon(imgPath));
-            setButtonSize();
             
+            setPreferredSize(new Dimension(width, height));
             addActionListener(e -> actionListener());
-        }
-
-        // private methods
-        private void setButtonSize() {
-            int width = getIcon().getIconWidth();
-            int height = getIcon().getIconHeight();
-    
-            Dimension size = new Dimension(width, height);
-            setPreferredSize(size);
         }
 
         private void actionListener() {
