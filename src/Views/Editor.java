@@ -7,6 +7,7 @@ import java.awt.*;
 
 import src.Components.MenuBar;
 import src.Components.SidePanel;
+import src.Components.Canvas;
 import src.Utils.KeyboardListener;
 
 public class Editor extends JFrame {
@@ -31,10 +32,15 @@ public class Editor extends JFrame {
         JPanel sidePanel = new SidePanel();
         add(sidePanel, BorderLayout.WEST);
 
+        JPanel canvas = Canvas.GetInstance();
+        add(canvas, BorderLayout.CENTER);
+
         KeyboardListener keyboardListener = new KeyboardListener();
         keyboardListener.registerKeyboardListener();
 
         setSize(width, height);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        setVisible(true);
     }
 }
