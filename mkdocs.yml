@@ -87,6 +87,7 @@ nav:
         - wiki/keyboard-listener.md
         - wiki/status-code.md
         - wiki/actions.md
+    - How To: howto.md
     - LICENSE: LICENSE.md
     - Reference: reference.md
     - Report Issues: https://github.com/1chooo/uml-editor/issues
