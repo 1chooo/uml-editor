@@ -10,10 +10,10 @@ import java.awt.event.MouseMotionListener;
 
 import javax.swing.*;
 
-import Modes.Mode;
-import Shapes.Group;
-import Shapes.Line;
-import Shapes.Shape;
+import src.Modes.Mode;
+import src.Shapes.Group;
+import src.Shapes.Line;
+import src.Shapes.Shape;
 
 public class Canvas extends JPanel {
 

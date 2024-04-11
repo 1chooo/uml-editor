@@ -8,9 +8,24 @@ import java.awt.GridLayout;
 import java.awt.Dimension;
 import java.awt.Color;
 
-import Modes.ClassMode;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
 
-public class SidePanel extends JPanel {
+import src.Modes.Mode;
+import src.Modes.SelectMode;
+import src.Modes.CreateLineMode;
+import src.Modes.CreateClassMode;
+import src.Modes.CreateUseCaseMode;
+import src.Components.Canvas;
+
+public class SidePanel extends JToolBar {
+
+    private JButton curBtn = null;
+    private Canvas canvas;
+    private Mode mode;
+
     // constructor
     public SidePanel() {
         initComponents();
@@ -20,33 +35,61 @@ public class SidePanel extends JPanel {
     private void initComponents() {
         setLayout(new GridLayout(0, 1)); // Set GridLayout with 1 row and multiple columns
 
-        mode=new CreateClassMode();
+        mode = new SelectMode();
+        JButton selectBtn = setButton("Select", "imgs/select.png", mode);
+        this.add(selectBtn);
 
-        add(new SideButton("Select", "imgs/select.png"), mode);
-        add(new SideButton("Association Line", "imgs/association-line.png"), mode);
-        add(new SideButton("Generation Line", "imgs/generation-line.png"), mode);
-        add(new SideButton("Composition Line", "imgs/composition-line.png"), mode);
-        add(new SideButton("Class", "imgs/class.png"), mode);
-        add(new SideButton("Use Case", "imgs/use-case.png"), mode);
+        mode = new CreateLineMode("AssociationLine");
+        JButton associationBtn = setButton("<html>Association<br>Line</html>", "imgs/association-line.png",
+                mode);
+        this.add(associationBtn);
+
+        mode = new CreateLineMode("GeneralizationLine");
+        JButton generalizationBtn = setButton("<html>Generalization<br>Line</html>", "imgs/generation-line.png",
+                mode);
+        this.add(generalizationBtn);
+
+        mode = new CreateLineMode("CompositionLine");
+        JButton compositionBtn = setButton("<html>Composition<br>Line</html>", "imgs/composition-line.png",
+                mode);
+        this.add(compositionBtn);
+
+        mode = new CreateClassMode();
+        JButton classBtn = setButton("Class", "imgs/class.png", mode);
+        this.add(classBtn);
+
+        mode = new CreateUseCaseMode();
+        JButton useCaseBtn = setButton("Use Case", "imgs/use-case.png", mode);
+        this.add(useCaseBtn);
     }
 
-    // private class
-    private class SideButton extends JButton {
-        // private variables
-        private int width = 120;
-        private int height = 80;
+    private JButton setButton(String name, String imgPath, Mode m) {
+        JButton Btn = new JButton();
+        Btn.setFocusPainted(false);
 
-        // constructor
-        public SideButton(String name, String imgPath, Mode mode) {
-            super(new ImageIcon(imgPath));
+        Btn.setLayout(new BorderLayout());
+        JLabel txt = new JLabel(name, SwingConstants.CENTER);
+        JLabel img = new JLabel(new ImageIcon(imgPath));
+        Btn.add(img, BorderLayout.WEST);
+        Btn.add(txt, BorderLayout.CENTER);
 
-            setPreferredSize(new Dimension(width, height));
-            addActionListener(e -> actionListener());
-        }
+        // Btn.setToolTipText(tipTxt);
+        Btn.setBackground(new java.awt.Color(255, 255, 255));
 
-        private void actionListener() {
-            JOptionPane.showMessageDialog(null, "You clicked the button.");
-            setBackground(Color.BLACK);
-        }
+        Btn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (curBtn != null)
+                    curBtn.setBackground(new java.awt.Color(255, 255, 255));
+
+                curBtn = (JButton) e.getSource();
+                curBtn.setBackground(new java.awt.Color(120, 120, 120));
+
+                canvas.setCurMode(m);
+                canvas.selectedObj = null;
+            }
+        });
+
+        return Btn;
     }
+
 }
