@@ -5,9 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-import src.Modes.CreateClassMode;
+import src.Modes.CreateShapeMode;
 import src.Modes.CreateLineMode;
-import src.Modes.CreateUseCaseMode;
 import src.Modes.Mode;
 import src.Modes.SelectMode;
 
@@ -42,11 +41,12 @@ public class SidePanel extends JToolBar {
 		JButton compositionBtn = createButton("<html>Composition<br>Line</html>", "imgs/composition-line.png", mode);
 		this.add(compositionBtn);
 
-		mode = new CreateClassMode();
+		
+		mode = new CreateShapeMode("Class");
 		JButton classBtn = createButton("Class", "imgs/class.png", mode);
 		this.add(classBtn);
 
-		mode = new CreateUseCaseMode();
+		mode = new CreateShapeMode("Use Case");
 		JButton useCaseBtn = createButton("Use Case", "imgs/use-case.png", mode);
 		this.add(useCaseBtn);
 	}
