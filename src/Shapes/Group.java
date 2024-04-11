@@ -1,4 +1,4 @@
-package src.UmlShape;
+package src.Shapes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,15 +12,18 @@ import java.awt.Rectangle;
 
 public class Group extends Shape {
 
+	// variables
 	private List<Shape> groupShapes = new ArrayList<Shape>();
 	private Rectangle groupRec = new Rectangle();
 
 	public Shape selectedObj = null;
 
+	// constructor
 	public Group() {
 		this.name = "Group";
 	}
 
+	// methods
 	public void draw(Graphics g) {
 		for (int i = groupShapes.size() - 1; i >= 0; i--) {
 			Shape shape = groupShapes.get(i);
@@ -30,9 +33,9 @@ public class Group extends Shape {
 
 	@Override
 	public void drawGroup(Graphics g) {
-		g.setColor(new Color(153, 255, 204, 50));
+		g.setColor(new Color(20, 110, 180, 50));
 		g.fillRect(groupRec.x - 10, groupRec.y - 10, groupRec.width + 20, groupRec.height + 20);
-		g.setColor(new Color(153, 255, 204));
+		g.setColor(new Color(20, 110, 180));
 		g.drawRect(groupRec.x - 10, groupRec.y - 10, groupRec.width + 20, groupRec.height + 20);
 	}
 

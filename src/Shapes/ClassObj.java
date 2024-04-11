@@ -1,4 +1,4 @@
-package src.UmlShape;
+package src.Shapes;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -7,6 +7,7 @@ import java.awt.Point;
 
 public class ClassObj extends BasicObj {
 
+	// constructor
 	public ClassObj(int x1, int y1, String name) {
 		this.width = 100;
 		this.height = 120;
@@ -18,6 +19,7 @@ public class ClassObj extends BasicObj {
 		createPorts();
 	}
 
+	// public method
 	public void draw(Graphics g) {
 		g.setColor(new Color(35, 47, 62));
 		g.fillRect(x1, y1, 100, 120);

@@ -4,11 +4,11 @@ import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.util.List;
 
-import src.UmlShape.AssociationLine;
-import src.UmlShape.CompositionLine;
-import src.UmlShape.GeneralizationLine;
-import src.UmlShape.Line;
-import src.UmlShape.Shape;
+import src.Shapes.AssociationLine;
+import src.Shapes.CompositionLine;
+import src.Shapes.GeneralizationLine;
+import src.Shapes.Line;
+import src.Shapes.Shape;
 
 public class CreateLineMode extends Mode {
 
@@ -35,8 +35,8 @@ public class CreateLineMode extends Mode {
 			case "CompositionLine":
 				line = new CompositionLine(start.x, start.y, end.x, end.y);
 				break;
-
 		}
+
 		return line;
 	}
 
@@ -69,8 +69,6 @@ public class CreateLineMode extends Mode {
 			canvas.tmpLine = null;
 			point1 = null;
 			point2 = null;
-
-			// canvas.repaint();
 		}
 	}
 
@@ -94,7 +92,9 @@ public class CreateLineMode extends Mode {
 				}
 				Point portPoint = new Point();
 
-				portPoint.setLocation(shape.getPort(in).getCenterX(), shape.getPort(in).getCenterY());
+				portPoint.setLocation(
+						shape.getPort(in).getCenterX(),
+						shape.getPort(in).getCenterY());
 				return portPoint;
 			}
 		}

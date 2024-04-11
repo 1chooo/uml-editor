@@ -6,7 +6,8 @@ import java.awt.event.MouseMotionListener;
 
 import src.Components.Canvas;
 
-public abstract class Mode implements MouseListener, MouseMotionListener {
+public abstract class Mode
+		implements MouseListener, MouseMotionListener {
 	protected Canvas canvas = Canvas.getInstance();
 
 	public void mousePressed(MouseEvent e) {

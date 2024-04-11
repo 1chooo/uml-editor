@@ -2,8 +2,9 @@ package src.Components;
 
 import javax.swing.*;
 
-import src.UmlShape.Group;
-import src.UmlShape.Shape;
+import src.Listener.MenuBarListener;
+import src.Shapes.Group;
+import src.Shapes.Shape;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,79 +12,56 @@ import java.util.List;
 
 public class MenuBar extends JMenuBar {
 
-	JMenu file = new JMenu("File");
-	private Canvas canvas = Canvas.getInstance();
+    private Canvas canvas = Canvas.getInstance();
 
-	private List<Shape> shapes = null;
+    private List<Shape> shapes = null;
+    private MenuBarListener menuBarListener;
 
-	public MenuBar() {
+    public MenuBar() {
+        initialize();
+    }
 
-		this.add(file);
+    private void initialize() {
+        menuBarListener = new MenuBarListener(canvas);
+        createXmlEditorMenu();
+        createFileMenu();
+        createEditMenu();
+    }
 
-		JMenu edit = new JMenu("Edit");
+    private void createXmlEditorMenu() {
+        JMenu xmlEditor = new JMenu("XML Editor");
+        JMenuItem about = new JMenuItem("About XML Editor");
+        about.addActionListener(menuBarListener.getAboutListener());
+        xmlEditor.add(about);
+        JMenuItem quit = new JMenuItem("Quit (Control + Q)");
+        quit.addActionListener(menuBarListener.getQuitListener()); // Exit the application
+        xmlEditor.add(quit);
 
-		JMenuItem changeObjName = new JMenuItem("Change Object Name");
-		changeNameListener(changeObjName);
-		edit.add(changeObjName);
-		edit.addSeparator();
+        this.add(xmlEditor);
+    }
 
-		JMenuItem group = new JMenuItem("Group");
-		groupListener(group);
-		edit.add(group);
-		edit.addSeparator();
+    private void createFileMenu() {
+        JMenu file = new JMenu("File");
+        this.add(file);
+    }
 
-		JMenuItem unGroup = new JMenuItem("UnGroup");
-		unGroupListener(unGroup);
-		edit.add(unGroup);
+    private void createEditMenu() {
+        JMenu edit = new JMenu("Edit");
 
-		this.add(edit);
-	}
+        JMenuItem changeObjName = new JMenuItem("Change Object Name");
+        changeObjName.addActionListener(menuBarListener.getChangeNameListener());
+        edit.add(changeObjName);
+        edit.addSeparator();
 
-	public void changeNameListener(JMenuItem itemName) {
-		itemName.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent ev) {
-				if (canvas.selectedObj != null) {
-					ChangeNameDialog dialog = new ChangeNameDialog(canvas.selectedObj.name);
-				} else {
-					Warning noObj = new Warning("You must select exactly a object !", 300);
-				}
-			}
-		});
-	}
+        JMenuItem group = new JMenuItem("Group");
+        group.addActionListener(menuBarListener.getGroupListener());
+        edit.add(group);
+        edit.addSeparator();
 
-	public void groupListener(JMenuItem itemName) {
-		itemName.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent ev) {
-				shapes = canvas.getShapes();
-				System.out.println("shapes size :" + shapes.size());
-				int cnt = 0;
-				for (int i = 0; i < shapes.size(); i++) {
-					Shape shape = shapes.get(i);
-					if (shape.isSelected) {
-						cnt++;
-					}
-				}
+        JMenuItem unGroup = new JMenuItem("UnGroup");
+        unGroup.addActionListener(menuBarListener.getUnGroupListener());
+        edit.add(unGroup);
 
-				if (cnt >= 2) {
-					canvas.createGroup();
-				} else {
-					Warning lessThanTwoObj = new Warning("You must select two or more objects !", 300);
-				}
-			}
-		});
-	}
-
-	public void unGroupListener(JMenuItem itemName) {
-		itemName.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent ev) {
-				Shape shape = canvas.selectedObj;
-
-				if (shape != null && (shape instanceof Group)) {
-					canvas.unGroup();
-				} else {
-					Warning nullObj = new Warning("You must select exactly a group object !", 300);
-				}
-			}
-		});
-	}
+        this.add(edit);
+    }
 }

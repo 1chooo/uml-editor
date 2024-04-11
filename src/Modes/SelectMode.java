@@ -3,17 +3,22 @@ package src.Modes;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.util.List;
+
+import src.Shapes.Shape;
+
 import java.awt.event.MouseEvent;
-import src.UmlShape.Shape;
 
 public class SelectMode extends Mode {
 	private List<Shape> shapes;
 	private Point firstMouse;
 	private int inside = -5;
 
+	public SelectMode() {
+	}
+
 	public void mousePressed(MouseEvent e) {
 		firstMouse = e.getPoint();
-		System.out.println("x:" + e.getX() + "  y: " + e.getY());
+		System.out.println("x: " + e.getX() + "  y: " + e.getY());
 		shapes = canvas.getShapes();
 
 		for (int i = 0; i < shapes.size(); i++) {
@@ -34,9 +39,8 @@ public class SelectMode extends Mode {
 
 	public void mouseDragged(MouseEvent e) {
 		if (canvas.selectedObj != null) {
-			if (inside >= 0) {
+			if (inside >= 0)
 				canvas.selectedObj.setLocation(e.getPoint(), firstMouse);
-			}
 			firstMouse = e.getPoint();
 		} else {
 			int left = Math.min(firstMouse.x, e.getPoint().x);
@@ -59,9 +63,9 @@ public class SelectMode extends Mode {
 			shapes = canvas.getShapes();
 			for (int i = 0; i < shapes.size(); i++) {
 				Shape shape = shapes.get(i);
-				if (canvas.selectedArea != null && canvas.withinSelectedArea(shape)) {
+				if (canvas.selectedArea != null
+						&& canvas.withinSelectedArea(shape))
 					shape.isSelected = true;
-				}
 			}
 			canvas.selectedArea = null;
 		}

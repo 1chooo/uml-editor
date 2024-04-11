@@ -1,16 +1,18 @@
-package src.UmlShape;
+package src.Shapes;
 
 import java.awt.Graphics;
 
-public class CompositionLine extends Line {
+public class AssociationLine extends Line {
 
-	public CompositionLine(int x1, int y1, int x2, int y2) {
+	// constructor
+	public AssociationLine(int x1, int y1, int x2, int y2) {
 		this.x1 = x1;
 		this.y1 = y1;
 		this.x2 = x2;
 		this.y2 = y2;
 	}
 
+	// public method
 	public void draw(Graphics g) {
 		int width = 10, height = 10;
 		int dx = x2 - x1, dy = y2 - y1;
@@ -26,13 +28,8 @@ public class CompositionLine extends Line {
 		yn = xn * sin + yn * cos + y1;
 		xn = x;
 
-		double xk = (height * 2 / D) * x1 + ((D - height * 2) / D) * x2;
-		double yk = (height * 2 / D) * y1 + ((D - height * 2) / D) * y2;
-
-		int[] xpoints = { x2, (int) xm, (int) xk, (int) xn };
-		int[] ypoints = { y2, (int) ym, (int) yk, (int) yn };
-
+		g.drawLine((int) xm, (int) ym, x2, y2);
+		g.drawLine((int) xn, (int) yn, x2, y2);
 		g.drawLine(x1, y1, x2, y2);
-		g.fillPolygon(xpoints, ypoints, 4);
 	}
 }

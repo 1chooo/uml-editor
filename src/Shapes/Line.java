@@ -1,12 +1,14 @@
-package src.UmlShape;
+package src.Shapes;
 
 import java.awt.Graphics;
 import java.awt.Point;
 
 public abstract class Line extends Shape {
 
+	// variables
 	protected Port[] ports = new Port[2];
 
+	// methods
 	public abstract void draw(Graphics g);
 
 	public void setPort(Port port1, Port port2) {

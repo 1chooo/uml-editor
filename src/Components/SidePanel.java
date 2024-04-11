@@ -11,49 +11,47 @@ import src.Modes.CreateUseCaseMode;
 import src.Modes.Mode;
 import src.Modes.SelectMode;
 
-public class ToolBar extends JToolBar {
+public class SidePanel extends JToolBar {
 
 	private JButton curBtn = null;
 	private Canvas canvas;
 	private Mode mode;
 
-	public ToolBar() {
-
+	public SidePanel() {
 		canvas = Canvas.getInstance();
-
 		GridLayout gridLayout = new GridLayout(6, 1);
 		setLayout(gridLayout);
-		this.setBackground(new Color(83, 85, 87));
+		initializeButtons();
+	}
 
+	private void initializeButtons() {
 		mode = new SelectMode();
-		JButton selectBtn = setButton("Select", "imgs/select.png", "set the select mode", mode);
+		JButton selectBtn = createButton("Select", "imgs/select.png", mode);
 		this.add(selectBtn);
 
 		mode = new CreateLineMode("AssociationLine");
-		JButton associationBtn = setButton("<html>Association<br>Line</html>", "imgs/association-line.png",
-				"create a association line", mode);
+		JButton associationBtn = createButton("<html>Association<br>Line</html>", "imgs/association-line.png", mode);
 		this.add(associationBtn);
 
 		mode = new CreateLineMode("GeneralizationLine");
-		JButton generalizationBtn = setButton("<html>Generalization<br>Line</html>", "imgs/generation-line.png",
-				"create a generalization line", mode);
+		JButton generalizationBtn = createButton("<html>Generalization<br>Line</html>", "imgs/generation-line.png",
+				mode);
 		this.add(generalizationBtn);
 
 		mode = new CreateLineMode("CompositionLine");
-		JButton compositionBtn = setButton("<html>Composition<br>Line</html>", "imgs/composition-line.png",
-				"create a composition line", mode);
+		JButton compositionBtn = createButton("<html>Composition<br>Line</html>", "imgs/composition-line.png", mode);
 		this.add(compositionBtn);
 
 		mode = new CreateClassMode();
-		JButton classBtn = setButton("Class", "imgs/class.png", "create a class object", mode);
+		JButton classBtn = createButton("Class", "imgs/class.png", mode);
 		this.add(classBtn);
 
 		mode = new CreateUseCaseMode();
-		JButton useCaseBtn = setButton("Use Case", "imgs/use-case.png", "create a use case object", mode);
+		JButton useCaseBtn = createButton("Use Case", "imgs/use-case.png", mode);
 		this.add(useCaseBtn);
 	}
 
-	private JButton setButton(String name, String imgPath, String tipTxt, Mode m) {
+	private JButton createButton(String name, String imgPath, Mode m) {
 		JButton Btn = new JButton();
 		Btn.setFocusPainted(false);
 
@@ -63,7 +61,6 @@ public class ToolBar extends JToolBar {
 		Btn.add(img, BorderLayout.WEST);
 		Btn.add(txt, BorderLayout.CENTER);
 
-		Btn.setToolTipText(tipTxt);
 		Btn.setBackground(new java.awt.Color(255, 255, 255));
 
 		Btn.addActionListener(new ActionListener() {

@@ -2,19 +2,17 @@ package src.Modes;
 
 import java.awt.event.MouseEvent;
 
-import src.UmlShape.Shape;
-import src.UmlShape.UseCaseObj;
+import src.Shapes.Shape;
+import src.Shapes.UseCaseObj;
 
 public class CreateUseCaseMode extends Mode {
-	/*
-	 * public CreateUseCaseMode()
-	 * {
-	 * 
-	 * }
-	 */
+
+	public CreateUseCaseMode() {
+
+	}
 
 	public void mousePressed(MouseEvent e) {
-		System.out.println("x:" + e.getX() + "  y: " + e.getY());
+		System.out.println("x: " + e.getX() + "  y: " + e.getY());
 		Shape obj = new UseCaseObj(e.getX(), e.getY(), "Use Case");
 		canvas.addShape(obj);
 	}

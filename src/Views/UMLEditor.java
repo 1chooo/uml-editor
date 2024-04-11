@@ -1,18 +1,30 @@
-package src.Components;
+package src.Views;
 
 import java.awt.BorderLayout;
 import javax.swing.*;
 
-public class Uml_Editor extends JFrame {
+import src.Components.Canvas;
+import src.Components.MenuBar;
+import src.Components.SidePanel;
 
-	private ToolBar toolbar;
+public class UMLEditor extends JFrame {
+
+	// private variables
+	private SidePanel toolbar;
 	private MenuBar menubar;
 	private Canvas canvas;
+	private int width = 1280;
+	private int height = 720;
 
-	public Uml_Editor() {
+	// constructor
+	public UMLEditor() {
 		super("UML Editor");
+		initComponents();
+	}
 
-		toolbar = new ToolBar();
+	// private methods
+    private void initComponents() {
+        toolbar = new SidePanel();
 		toolbar.setOpaque(true);
 		this.getContentPane().setLayout(new BorderLayout());
 		this.getContentPane().add(toolbar, BorderLayout.WEST);
@@ -23,11 +35,8 @@ public class Uml_Editor extends JFrame {
 		canvas = Canvas.getInstance();
 		this.getContentPane().add(canvas, BorderLayout.EAST);
 
-		setSize(1200, 800);
+		setSize(width, height);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
-	}
-
-	
-
+    }
 }

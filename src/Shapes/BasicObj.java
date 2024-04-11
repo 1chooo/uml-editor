@@ -1,4 +1,4 @@
-package src.UmlShape;
+package src.Shapes;
 
 import java.awt.Graphics;
 import java.awt.Point;
@@ -6,11 +6,14 @@ import java.awt.Polygon;
 
 public abstract class BasicObj extends Shape {
 
+	// variables
 	int width, height;
 	protected Port[] ports = new Port[4];
 
+	// constructor
 	public abstract void draw(Graphics g);
 
+	// public method
 	public void setLocation(Point p1, Point p2) {
 		int moveX = p1.x - p2.x;
 		int moveY = p1.y - p2.y;
