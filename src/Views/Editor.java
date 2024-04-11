@@ -30,13 +30,13 @@ public class Editor extends JFrame {
         JMenuBar menuBar = new MenuBar();
         add(menuBar, BorderLayout.NORTH);
 
-        JPanel sidePanel = new SidePanel();
+        JToolBar sidePanel = new SidePanel();
         add(sidePanel, BorderLayout.WEST);
 
         JLabel modeStatus = new ModeStatus();
         add(modeStatus, BorderLayout.SOUTH);
 
-        JPanel canvas = Canvas.GetInstance();
+        JPanel canvas = Canvas.getInstance();
         add(canvas, BorderLayout.CENTER);
 
         KeyboardListener keyboardListener = new KeyboardListener();
