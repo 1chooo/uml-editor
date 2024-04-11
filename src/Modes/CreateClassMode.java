@@ -2,8 +2,8 @@ package src.Modes;
 
 import java.awt.event.*;
 
-import src.Shapes.ClassObj;
-import src.Shapes.Shape;
+import src.UmlShape.ClassObj;
+import src.UmlShape.Shape;
 
 public class CreateClassMode extends Mode {
 

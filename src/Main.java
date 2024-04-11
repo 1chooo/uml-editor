@@ -1,11 +1,9 @@
-// src/Main.java
-
 package src;
-
-import src.Views.Editor;
+import src.Components.Uml_Editor;
 
 public class Main {
     public static void main(String[] args) {
-        new Editor();
-    }
+		Uml_Editor mainWindow = new Uml_Editor();
+
+	}
 }

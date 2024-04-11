@@ -1,4 +1,4 @@
-package src.Shapes;
+package src.UmlShape;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -22,7 +22,7 @@ public class UseCaseObj extends BasicObj {
 	}
 
 	public void draw(Graphics g) {
-		g.setColor(new Color(153, 255, 153));
+		g.setColor(new Color(255, 153, 0));
 		g.fillOval(x1, y1, 120, 90);
 
 		g.setColor(new Color(0, 0, 0));

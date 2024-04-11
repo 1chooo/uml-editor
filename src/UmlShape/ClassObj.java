@@ -1,4 +1,4 @@
-package src.Shapes;
+package src.UmlShape;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -19,7 +19,7 @@ public class ClassObj extends BasicObj {
 	}
 
 	public void draw(Graphics g) {
-		g.setColor(new Color(153, 204, 255));
+		g.setColor(new Color(35, 47, 62));
 		g.fillRect(x1, y1, 100, 120);
 
 		g.setColor(new Color(0, 0, 0));

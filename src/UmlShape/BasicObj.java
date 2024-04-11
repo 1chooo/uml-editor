@@ -1,4 +1,4 @@
-package src.Shapes;
+package src.UmlShape;
 
 import java.awt.Graphics;
 import java.awt.Point;

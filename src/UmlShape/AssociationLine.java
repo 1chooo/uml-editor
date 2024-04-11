@@ -1,10 +1,10 @@
-package src.Shapes;
+package src.UmlShape;
 
-import java.awt.*;
+import java.awt.Graphics;
 
-public class GeneralizationLine extends Line {
+public class AssociationLine extends Line {
 
-	public GeneralizationLine(int x1, int y1, int x2, int y2) {
+	public AssociationLine(int x1, int y1, int x2, int y2) {
 		this.x1 = x1;
 		this.y1 = y1;
 		this.x2 = x2;
@@ -26,10 +26,8 @@ public class GeneralizationLine extends Line {
 		yn = xn * sin + yn * cos + y1;
 		xn = x;
 
-		int[] xpoints = { x2, (int) xm, (int) xn };
-		int[] ypoints = { y2, (int) ym, (int) yn };
-
+		g.drawLine((int) xm, (int) ym, x2, y2);
+		g.drawLine((int) xn, (int) yn, x2, y2);
 		g.drawLine(x1, y1, x2, y2);
-		g.fillPolygon(xpoints, ypoints, 3);
 	}
 }

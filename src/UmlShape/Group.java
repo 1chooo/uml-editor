@@ -1,4 +1,4 @@
-package src.Shapes;
+package src.UmlShape;
 
 import java.util.ArrayList;
 import java.util.List;
