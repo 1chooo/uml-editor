@@ -3,7 +3,7 @@ package src.Shapes;
 import java.util.ArrayList;
 import java.util.List;
 
-import UmlEditor.Canvas;
+import src.Components.Canvas;
 
 import java.awt.Color;
 import java.awt.Graphics;
