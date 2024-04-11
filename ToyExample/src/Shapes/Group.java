@@ -30,9 +30,9 @@ public class Group extends Shape {
 
 	@Override
 	public void drawGroup(Graphics g) {
-		g.setColor(new Color(153, 255, 204, 50));
+		g.setColor(new Color(20, 110, 180, 50));
 		g.fillRect(groupRec.x - 10, groupRec.y - 10, groupRec.width + 20, groupRec.height + 20);
-		g.setColor(new Color(153, 255, 204));
+		g.setColor(new Color(20, 110, 180));
 		g.drawRect(groupRec.x - 10, groupRec.y - 10, groupRec.width + 20, groupRec.height + 20);
 	}
 

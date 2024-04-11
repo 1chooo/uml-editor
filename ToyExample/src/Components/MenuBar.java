@@ -63,7 +63,7 @@ public class MenuBar extends JMenuBar {
         itemName.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ev) {
                 if (canvas.selectedObj != null) {
-                    ChangeNameDialog dialog = new ChangeNameDialog(canvas.selectedObj.name);
+                    RenameObject dialog = new RenameObject(canvas.selectedObj.name);
                 } else {
                     Warning noObj = new Warning("You must select exactly a object !", 300);
                 }

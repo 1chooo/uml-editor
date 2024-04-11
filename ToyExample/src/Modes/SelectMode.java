@@ -16,7 +16,7 @@ public class SelectMode extends Mode{
 	public void mousePressed(MouseEvent e) 
 	{
 		firstMouse=e.getPoint();
-		System.out.println("x:" + e.getX() + "  y: "  + e.getY());
+		System.out.println("x: " + e.getX() + "  y: "  + e.getY());
 		shapes=canvas.getShapes();
 		
 		for(int i=0;i<shapes.size();i++)
