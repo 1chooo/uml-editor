@@ -1,12 +1,14 @@
 # UML Editor
 
+![](./docs/imgs/cover.png)
+
 ## How to build and run the project
 
 ```bash
 # Clone the repository
-git clone git@github.com:1chooo/uml-editor.git
+$ git clone git@github.com:1chooo/uml-editor.git
 
-./scripts/run.sh
+$ ./scripts/run.sh
 ```
 
 ## CONTACT INFO.
