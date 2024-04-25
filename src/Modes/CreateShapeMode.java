@@ -1,9 +1,9 @@
-package src.Modes;
+package Modes;
 
 import java.awt.event.MouseEvent;
-import src.Shapes.ClassObj;
-import src.Shapes.Shape;
-import src.Shapes.UseCaseObj;
+import Shapes.ClassObj;
+import Shapes.Shape;
+import Shapes.UseCaseObj;
 
 public class CreateShapeMode extends Mode {
     private String shapeType;

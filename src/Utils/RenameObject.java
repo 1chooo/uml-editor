@@ -1,4 +1,4 @@
-package src.Utils;
+package Utils;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import src.Components.Canvas;
+import Components.Canvas;
 
 public class RenameObject extends JFrame {
 

@@ -1,10 +1,10 @@
-package src.Components;
+package Components;
 
 import javax.swing.*;
 
-import src.Listener.MenuBarListener;
-import src.Shapes.Group;
-import src.Shapes.Shape;
+import Listener.MenuBarListener;
+import Shapes.Group;
+import Shapes.Shape;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

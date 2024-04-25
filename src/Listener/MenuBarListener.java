@@ -1,15 +1,15 @@
-package src.Listener;
+package Listener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-import src.Components.Canvas;
-import src.Shapes.Group;
-import src.Shapes.Shape;
-import src.Utils.RenameObject;
-import src.Utils.Warning;
+import Components.Canvas;
+import Shapes.Group;
+import Shapes.Shape;
+import Utils.RenameObject;
+import Utils.Warning;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.InputEvent;

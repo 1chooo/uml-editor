@@ -1,14 +1,14 @@
-package src.Modes;
+package Modes;
 
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.util.List;
 
-import src.Shapes.AssociationLine;
-import src.Shapes.CompositionLine;
-import src.Shapes.GeneralizationLine;
-import src.Shapes.Line;
-import src.Shapes.Shape;
+import Shapes.AssociationLine;
+import Shapes.CompositionLine;
+import Shapes.GeneralizationLine;
+import Shapes.Line;
+import Shapes.Shape;
 
 public class CreateLineMode extends Mode {
 

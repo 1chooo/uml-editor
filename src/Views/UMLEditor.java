@@ -1,11 +1,11 @@
-package src.Views;
+package Views;
 
 import java.awt.BorderLayout;
 import javax.swing.*;
 
-import src.Components.Canvas;
-import src.Components.MenuBar;
-import src.Components.SidePanel;
+import Components.Canvas;
+import Components.MenuBar;
+import Components.SidePanel;
 
 public class UMLEditor extends JFrame {
 

@@ -1,10 +1,10 @@
-package src.Modes;
+package Modes;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-import src.Components.Canvas;
+import Components.Canvas;
 
 public abstract class Mode
 		implements MouseListener, MouseMotionListener {

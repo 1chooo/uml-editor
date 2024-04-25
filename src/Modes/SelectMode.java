@@ -1,10 +1,10 @@
-package src.Modes;
+package Modes;
 
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.util.List;
 
-import src.Shapes.Shape;
+import Shapes.Shape;
 
 import java.awt.event.MouseEvent;
 

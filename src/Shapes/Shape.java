@@ -1,9 +1,9 @@
-package src.Shapes;
+package Shapes;
 
 import java.awt.Graphics;
 import java.awt.Point;
 
-import src.Components.Canvas;
+import Components.Canvas;
 
 import java.awt.Color;
 import java.awt.Font;

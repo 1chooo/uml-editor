@@ -1,4 +1,4 @@
-package src.Components;
+package Components;
 
 import java.util.ArrayList;
 import java.util.EventListener;
@@ -10,10 +10,10 @@ import java.awt.event.MouseMotionListener;
 
 import javax.swing.*;
 
-import src.Modes.Mode;
-import src.Shapes.Group;
-import src.Shapes.Line;
-import src.Shapes.Shape;
+import Modes.Mode;
+import Shapes.Group;
+import Shapes.Line;
+import Shapes.Shape;
 
 public class Canvas extends JPanel {
 

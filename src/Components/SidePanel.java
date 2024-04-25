@@ -1,14 +1,14 @@
-package src.Components;
+package Components;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-import src.Modes.CreateShapeMode;
-import src.Modes.CreateLineMode;
-import src.Modes.Mode;
-import src.Modes.SelectMode;
+import Modes.CreateShapeMode;
+import Modes.CreateLineMode;
+import Modes.Mode;
+import Modes.SelectMode;
 
 public class SidePanel extends JToolBar {
 

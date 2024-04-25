@@ -1,4 +1,4 @@
-package src.Shapes;
+package Shapes;
 
 import java.awt.BasicStroke;
 import java.awt.Color;

@@ -1,9 +1,7 @@
-package src;
-
-import src.Views.UMLEditor;
+import Views.UMLEditor;
 
 public class Main {
 	public static void main(String[] args) {
-		UMLEditor mainWindow = new UMLEditor();
+		new UMLEditor();
 	}
 }
