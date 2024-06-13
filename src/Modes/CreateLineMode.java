@@ -25,6 +25,8 @@ public class CreateLineMode extends Mode {
 
 	public Line createLine(String type, Point start, Point end) {
 		Line line = null;
+
+		// TODO: Change to enum
 		switch (type) {
 			case "AssociationLine":
 				line = new AssociationLine(start.x, start.y, end.x, end.y);
@@ -42,7 +44,7 @@ public class CreateLineMode extends Mode {
 
 	public void mousePressed(MouseEvent e) {
 		shapes = canvas.getShapes();
-		point1 = findObj(e.getPoint(), 1);
+		point1 = findObject(e.getPoint(), 1);
 	}
 
 	public void mouseDragged(MouseEvent e) {
@@ -55,7 +57,7 @@ public class CreateLineMode extends Mode {
 
 	public void mouseReleased(MouseEvent e) {
 		if (point1 != null) {
-			point2 = findObj(e.getPoint(), 2);
+			point2 = findObject(e.getPoint(), 2);
 			if (point2 != null && shape1 != shape2) {
 				Line line = createLine(LineMode, point1, point2);
 				canvas.addLine(line);
@@ -72,7 +74,7 @@ public class CreateLineMode extends Mode {
 		}
 	}
 
-	public Point findObj(Point p, int tar) {
+	public Point findObject(Point p, int tar) {
 		for (int i = 0; i < shapes.size(); i++) {
 			Shape shape = shapes.get(i);
 
