@@ -1,20 +1,15 @@
 package Components;
 
-import javax.swing.*;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 import Listener.MenuBarListener;
-import Shapes.Group;
-import Shapes.Shape;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.List;
 
 public class MenuBar extends JMenuBar {
 
-    private Canvas canvas = Canvas.getInstance();
+    private Canvas canvas;
 
-    private List<Shape> shapes = null;
     private MenuBarListener menuBarListener;
 
     public MenuBar() {
@@ -22,6 +17,7 @@ public class MenuBar extends JMenuBar {
     }
 
     private void initialize() {
+        canvas = Canvas.getInstance();
         menuBarListener = new MenuBarListener(canvas);
         createXmlEditorMenu();
         createFileMenu();
