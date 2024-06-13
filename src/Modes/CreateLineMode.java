@@ -81,7 +81,7 @@ public class CreateLineMode extends Mode {
 			int in = shape.isInside(p);
 			if (in >= 0) {
 				if (in == 4) {
-					shape = shape.getSelectedObj();
+					shape = shape.getSelectedObject();
 					in = shape.isInside(p);
 				}
 

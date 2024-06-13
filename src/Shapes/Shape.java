@@ -52,7 +52,7 @@ public abstract class Shape {
 	public void drawGroup(Graphics g) {
 	};
 
-	public Shape getSelectedObj() {
+	public Shape getSelectedObject() {
 		return null;
 	};
 }
