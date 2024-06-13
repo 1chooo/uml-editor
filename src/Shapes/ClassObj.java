@@ -7,12 +7,12 @@ public class ClassObj extends BasicObj {
 
 	// constructor
 	public ClassObj(int x1, int y1, String name) {
-		this.width = 100;
-		this.height = 120;
+		this.setWidth(100);;
+		this.setHeight(120);;
 		this.x1 = x1;
 		this.y1 = y1;
-		this.x2 = width + x1;
-		this.y2 = height + y1;
+		this.x2 = this.getWidth() + x1;
+		this.y2 = this.getHeight() + y1;
 		this.name = name;
 		createPorts();
 	}

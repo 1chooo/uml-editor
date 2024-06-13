@@ -6,12 +6,12 @@ import java.awt.Graphics;
 public class UseCaseObj extends BasicObj {
 
 	public UseCaseObj(int x1, int y1, String name) {
-		this.width = 120;
-		this.height = 90;
+		this.setWidth(120);;
+		this.setHeight(90);;
 		this.x1 = x1;
 		this.y1 = y1;
-		this.x2 = width + x1;
-		this.y2 = height + y1;
+		this.x2 = this.getWidth() + x1;
+		this.y2 = this.getHeight() + y1;
 		this.name = name;
 
 		createPorts();

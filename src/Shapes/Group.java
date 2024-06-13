@@ -13,9 +13,7 @@ public class Group extends Shape {
 	// variables
 	private List<Shape> groupShapes = new ArrayList<Shape>();
 	private Rectangle groupRec = new Rectangle();
-
-	// TODO: We should use public here?? (Need to be researched)
-	public Shape selectedObj = null;
+	private Shape selectedObject = null;
 
 	// constructor
 	public Group() {
@@ -91,7 +89,7 @@ public class Group extends Shape {
 			Shape shape = groupShapes.get(i);
 			int inside = shape.isInside(p);
 			if (inside >= 0) {
-				selectedObj = shape;
+				selectedObject = shape;
 				return 4;
 			}
 		}
@@ -103,7 +101,7 @@ public class Group extends Shape {
 	}
 
 	@Override
-	public Shape getSelectedObj() {
-		return selectedObj;
+	public Shape getSelectedObject() {
+		return selectedObject;
 	};
 }

@@ -9,12 +9,13 @@ public class Port extends Rectangle {
 
 	private List<Line> lines = new ArrayList<Line>();
 
-	public void setPort(int cx, int cy) {
-		int x = cx - 5;
-		int y = cy - 5;
-		int w = 10;
-		int h = 10;
-		setBounds(x, y, w, h);
+	public void setPort(int centerX, int centerY) {
+		int x = centerX - 5;
+		int y = centerY - 5;
+		int width = 10;
+		int height = 10;
+
+		setBounds(x, y, width, height);
 	}
 
 	public void addLine(Line line) {
@@ -22,7 +23,7 @@ public class Port extends Rectangle {
 		System.out.println(lines);
 	}
 
-	public void deletLine(Line line) {
+	public void deleteLine(Line line) {
 		lines.remove(line);
 	}
 
