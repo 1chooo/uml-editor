@@ -10,7 +10,7 @@ import Shapes.Group;
 import Shapes.Shape;
 import Utils.RenameObject;
 import Utils.Warning;
-
+import Utils.Helper;
 
 public class MenuBarListener {
     private Canvas canvas;
@@ -23,8 +23,7 @@ public class MenuBarListener {
     public ActionListener getAboutListener() {
         return new ActionListener() {
             public void actionPerformed(ActionEvent ev) {
-                String message = "Hi There ! This is a simple XML Editor.";
-                JOptionPane.showMessageDialog(null, message);
+                JOptionPane.showMessageDialog(null, Helper.ABOUT_UML_MESSAGE.getValue());
             }
         };
     }
@@ -43,7 +42,8 @@ public class MenuBarListener {
                 if (canvas.selectedObject != null) {
                     new RenameObject(canvas.selectedObject.name);
                 } else {
-                    new Warning("You must select exactly a object !", 300);
+                    new Warning(
+                            Helper.SELECT_OBJECT_WARNING.getValue(), 300);
                 }
             }
         };
@@ -65,7 +65,8 @@ public class MenuBarListener {
                 if (cnt >= 2) {
                     canvas.createGroup();
                 } else {
-                    new Warning("You must select two or more objects !", 300);
+                    new Warning(
+                            Helper.GET_GROUP_WARNING.getValue(), 300);
                 }
             }
         };
@@ -79,7 +80,8 @@ public class MenuBarListener {
                 if (shape != null && (shape instanceof Group)) {
                     canvas.unGroup();
                 } else {
-                    new Warning("You must select exactly a group object !", 300);
+                    new Warning(
+                            Helper.GET_UNGROUP_WARNING.getValue(), 300);
                 }
             }
         };
