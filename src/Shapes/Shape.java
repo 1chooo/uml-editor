@@ -8,10 +8,11 @@ import Components.Canvas;
 
 public abstract class Shape {
 	protected int x1, y1, x2, y2;
+	protected Font font = new Font(Font.DIALOG, Font.BOLD, 13);
+
 	public boolean isSelected = false;
 	public String name;
 	public Canvas canvas = Canvas.getInstance();
-	protected Font font = new Font(Font.DIALOG, Font.BOLD, 13);
 
 	public int getX1() {
 		return this.x1;

@@ -7,20 +7,20 @@ import java.awt.Polygon;
 public abstract class BasicObj extends Shape {
 
 	// variables
-	// TODO: We should use public here?? (Need to be researched)
-	public int width, height;
+	private int width, height;
+	private int moveX, moveY;
 	protected Port[] ports = new Port[4];
-	
+
 	// public method
 	public abstract void draw(Graphics g);
-	
+
 	public void setLocation(Point p1, Point p2) {
-		int moveX = p1.x - p2.x;
-		int moveY = p1.y - p2.y;
+		moveX = p1.x - p2.x;
+		moveY = p1.y - p2.y;
 		this.x1 += moveX;
 		this.y1 += moveY;
-		this.x2 = width + x1;
-		this.y2 = height + y1;
+		this.x2 = getWidth() + x1;
+		this.y2 = getHeight() + y1;
 
 		int[] xpoint = { (x1 + x2) / 2, x2, (x1 + x2) / 2, x1 };
 		int[] ypoint = { y1, (y1 + y2) / 2, y2, (y1 + y2) / 2 };
@@ -48,6 +48,22 @@ public abstract class BasicObj extends Shape {
 		}
 	}
 
+	public int getWidth() {
+		return width;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
 	@Override
 	public void changeName(String name) {
 		this.name = name;
@@ -58,7 +74,9 @@ public abstract class BasicObj extends Shape {
 		Point c = new Point();
 		c.x = (x1 + x2) / 2;
 		c.y = (y1 + y2) / 2;
-		Point[] points = { new Point(x1, y1), new Point(x2, y1), new Point(x2, y2), new Point(x1, y2) };
+		Point[] points = {
+				new Point(x1, y1), new Point(x2, y1),
+				new Point(x2, y2), new Point(x1, y2) };
 
 		for (int i = 0; i < points.length; i++) {
 			Polygon polygon = new Polygon();
