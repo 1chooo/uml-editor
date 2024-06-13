@@ -2,8 +2,6 @@ package Shapes;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Polygon;
-import java.awt.Point;
 
 public class ClassObj extends BasicObj {
 
