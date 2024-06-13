@@ -1,9 +1,10 @@
 package Modes;
 
 import java.awt.event.MouseEvent;
-import Shapes.ClassObj;
+
+import Shapes.ClassObject;
 import Shapes.Shape;
-import Shapes.UseCaseObj;
+import Shapes.UseCaseObject;
 
 public class CreateShapeMode extends Mode {
     private String shapeType;
@@ -18,10 +19,10 @@ public class CreateShapeMode extends Mode {
         switch (shapeType) {
             // TODO: Change to enum
             case "Class":
-                obj = new ClassObj(e.getX(), e.getY(), "Class");    // change to enum or Action Class as aggregation
+                obj = new ClassObject(e.getX(), e.getY(), "Class");    // change to enum or Action Class as aggregation
                 break;
             case "Use Case":
-                obj = new UseCaseObj(e.getX(), e.getY(), "Use Case");
+                obj = new UseCaseObject(e.getX(), e.getY(), "Use Case");
                 break;
             default:
                 System.out.println("Unsupported shape type");

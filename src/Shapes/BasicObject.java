@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Polygon;
 
-public abstract class BasicObj extends Shape {
+public abstract class BasicObject extends Shape {
 
 	// variables
 	private int width, height;

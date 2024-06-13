@@ -3,10 +3,10 @@ package Shapes;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class ClassObj extends BasicObj {
+public class ClassObject extends BasicObject {
 
 	// constructor
-	public ClassObj(int x1, int y1, String name) {
+	public ClassObject(int x1, int y1, String name) {
 		this.setWidth(100);;
 		this.setHeight(120);;
 		this.x1 = x1;
