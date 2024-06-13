@@ -1,6 +1,6 @@
 package Utils;
 
-public class Helper {
+public class HELPER {
     public static final String RENAME_LENGTH_WARNING = "Please enter a name with less than 10 characters.";
     public static final String SELECT_OBJECT_WARNING = "You must select exactly a object !";
     public static final String GET_GROUP_WARNING = "You must select two or more objects !";

@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import Components.Canvas;
 import Components.MenuBar;
 import Components.SidePanel;
-import Utils.Config;
+import Utils.CONFIG;
 
 public class UMLEditor extends JFrame {
 
@@ -18,7 +18,7 @@ public class UMLEditor extends JFrame {
 	private int height = 720;
 
 	public UMLEditor() {
-		super(Config.APP_NAME);
+		super(CONFIG.APP_NAME);
 		initComponents();
 	}
 

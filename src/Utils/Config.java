@@ -1,6 +1,6 @@
 package Utils;
 
-public class Config {
+public class CONFIG {
     public static final String APP_NAME = "UML Editor";
     public static final String APP_VERSION = "Version";
     public static final String MENU_FILE = "File";
