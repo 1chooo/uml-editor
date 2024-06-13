@@ -63,18 +63,21 @@ public class Canvas extends JPanel {
 			selectedObject.changeName(name);
 	}
 
-	// TODO: no meaning about i--
 	public void createGroup() {
 		Group group = new Group();
-		for (int i = 0; i < shapes.size(); i++) {
-			Shape shape = shapes.get(i);
-			if (shape.isSelected == true) {
-				shape.isSelected = false;
-				group.addShape(shape);
-				shapes.remove(i);
-				i--; // refactor
-			}
+		List<Shape> selectedShapes = new ArrayList<>();
+	
+		// Traverse all Shape objects to find the selected ones at first
+		for (Shape shape : shapes)
+			if (shape.isSelected)
+				selectedShapes.add(shape);
+	
+		for (Shape shape : selectedShapes) {
+			shape.isSelected = false;
+			group.addShape(shape);
+			shapes.remove(shape);
 		}
+	
 		group.setEdge();
 		shapes.add(group);
 		selectedObject = null;
@@ -83,10 +86,8 @@ public class Canvas extends JPanel {
 	public void unGroup() {
 		Group group = (Group) selectedObject;
 		List<Shape> inGroup = group.getShapes();
-		for (int i = 0; i < inGroup.size(); i++) {
-			Shape shape = inGroup.get(i);
-			shapes.add(shape);
-		}
+	
+		shapes.addAll(inGroup);
 		shapes.remove(selectedObject);
 		selectedObject = null;
 	}
