@@ -20,7 +20,7 @@ public class RenameObject extends JFrame {
     private String objectName;
 
     public RenameObject(String Name) {
-        super("Change Object Name");
+        super(HELPER.RENAME_MESSAGE);
         objectName = Name;
         constructGUI();
     }
@@ -33,7 +33,7 @@ public class RenameObject extends JFrame {
 
         JPanel panel = new JPanel();
 
-        JLabel label = new JLabel("New Object Name : ");
+        JLabel label = new JLabel(HELPER.RENAME_PROMPT);
         panel.add(label);
 
         textField = new JTextField("  " + objectName + " ");
@@ -87,11 +87,12 @@ public class RenameObject extends JFrame {
 
     private void onOKButtonClicked() {
         String input = textField.getText();
+
         if (input.length() > 10) {
             new Warning(
-                    "Please enter a name with less than 10 characters.", 400);
+                    HELPER.RENAME_LENGTH_WARNING, 400);
         } else {
-            canvas.selectedObj.changeName(input);
+            canvas.selectedObject.changeName(input);
             dispose();
         }
     }

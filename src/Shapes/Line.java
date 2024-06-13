@@ -32,5 +32,4 @@ public abstract class Line extends Shape {
 	public int isInside(Point p) {
 		return -2;
 	}
-
 }

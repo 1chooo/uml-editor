@@ -10,7 +10,7 @@ import Shapes.Group;
 import Shapes.Shape;
 import Utils.RenameObject;
 import Utils.Warning;
-
+import Utils.HELPER;
 
 public class MenuBarListener {
     private Canvas canvas;
@@ -23,8 +23,15 @@ public class MenuBarListener {
     public ActionListener getAboutListener() {
         return new ActionListener() {
             public void actionPerformed(ActionEvent ev) {
-                String message = "Hi There ! This is a simple XML Editor.";
-                JOptionPane.showMessageDialog(null, message);
+                JOptionPane.showMessageDialog(null, HELPER.ABOUT_UML_MESSAGE);
+            }
+        };
+    }
+
+    public ActionListener getVersionListener() {
+        return new ActionListener() {
+            public void actionPerformed(ActionEvent ev) {
+                JOptionPane.showMessageDialog(null, HELPER.UML_VERSION_MESSAGE);
             }
         };
     }
@@ -40,11 +47,10 @@ public class MenuBarListener {
     public ActionListener getChangeNameListener() {
         return new ActionListener() {
             public void actionPerformed(ActionEvent ev) {
-                if (canvas.selectedObj != null) {
-                    new RenameObject(canvas.selectedObj.name);
-                } else {
-                    new Warning("You must select exactly a object !", 300);
-                }
+                if (canvas.selectedObject != null)
+                    new RenameObject(canvas.selectedObject.name);
+                else
+                    new Warning(HELPER.SELECT_OBJECT_WARNING, 300);
             }
         };
     }
@@ -54,19 +60,17 @@ public class MenuBarListener {
             public void actionPerformed(ActionEvent ev) {
                 shapes = canvas.getShapes();
                 System.out.println("shapes size :" + shapes.size());
-                int cnt = 0;
+                int count = 0;
                 for (int i = 0; i < shapes.size(); i++) {
                     Shape shape = shapes.get(i);
-                    if (shape.isSelected) {
-                        cnt++;
-                    }
+                    if (shape.isSelected)
+                        count++;
                 }
 
-                if (cnt >= 2) {
+                if (count >= 2)
                     canvas.createGroup();
-                } else {
-                    new Warning("You must select two or more objects !", 300);
-                }
+                else
+                    new Warning(HELPER.GET_GROUP_WARNING, 300);
             }
         };
     }
@@ -74,13 +78,12 @@ public class MenuBarListener {
     public ActionListener getUnGroupListener() {
         return new ActionListener() {
             public void actionPerformed(ActionEvent ev) {
-                Shape shape = canvas.selectedObj;
+                Shape shape = canvas.selectedObject;
 
-                if (shape != null && (shape instanceof Group)) {
+                if (shape != null && (shape instanceof Group))
                     canvas.unGroup();
-                } else {
-                    new Warning("You must select exactly a group object !", 300);
-                }
+                else
+                    new Warning(HELPER.GET_UNGROUP_WARNING, 300);
             }
         };
     }

@@ -3,10 +3,9 @@ package Shapes;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class ClassObj extends BasicObj {
+public class ClassObject extends BasicObject {
 
-	// constructor
-	public ClassObj(int x1, int y1, String name) {
+	public ClassObject(int x1, int y1, String name) {
 		this.setWidth(100);;
 		this.setHeight(120);;
 		this.x1 = x1;
@@ -17,7 +16,6 @@ public class ClassObj extends BasicObj {
 		createPorts();
 	}
 
-	// public method
 	public void draw(Graphics g) {
 		g.setColor(new Color(35, 47, 62));
 		g.fillRect(x1, y1, 100, 120);
@@ -29,7 +27,7 @@ public class ClassObj extends BasicObj {
 		g.drawLine(x1, y1 + split, x2, y1 + split);
 		g.drawLine(x1, y1 + split * 2, x2, y1 + split * 2);
 
-		// set obj name
+		// set object name
 		int stringWidth = g.getFontMetrics(font).stringWidth(name);
 		double empty = (Math.abs(x1 - x2) - stringWidth) / 2;
 		g.setFont(font);

@@ -3,9 +3,9 @@ package Shapes;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class UseCaseObj extends BasicObj {
+public class UseCaseObject extends BasicObject {
 
-	public UseCaseObj(int x1, int y1, String name) {
+	public UseCaseObject(int x1, int y1, String name) {
 		this.setWidth(120);;
 		this.setHeight(90);;
 		this.x1 = x1;

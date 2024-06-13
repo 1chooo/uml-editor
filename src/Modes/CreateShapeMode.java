@@ -1,34 +1,36 @@
 package Modes;
 
 import java.awt.event.MouseEvent;
-import Shapes.ClassObj;
+
+import Shapes.ClassObject;
 import Shapes.Shape;
-import Shapes.UseCaseObj;
+import Shapes.UseCaseObject;
+
+import Utils.MODES;
 
 public class CreateShapeMode extends Mode {
-    private String shapeType;
+    private String shapeMode;
 
-    public CreateShapeMode(String shapeType) {
-        this.shapeType = shapeType;
+    public CreateShapeMode(String shapeMode) {
+        this.shapeMode = shapeMode;
     }
 
     public void mousePressed(MouseEvent e) {
         System.out.println("x: " + e.getX() + "  y: " + e.getY());
-        Shape obj = null;
-        switch (shapeType) {
-            // TODO: Change to enum
-            case "Class":
-                obj = new ClassObj(e.getX(), e.getY(), "Class");    // change to enum or Action Class as aggregation
+        Shape object = null;
+
+        switch (shapeMode) {
+            case MODES.CLASS:
+                object = new ClassObject(e.getX(), e.getY(),  MODES.CLASS);
                 break;
-            case "Use Case":
-                obj = new UseCaseObj(e.getX(), e.getY(), "Use Case");
+            case MODES.USE_CASE:
+                object = new UseCaseObject(e.getX(), e.getY(),  MODES.USE_CASE);
                 break;
             default:
                 System.out.println("Unsupported shape type");
                 break;
         }
-        if (obj != null) {
-            canvas.addShape(obj);
-        }
+        if (object != null)
+            canvas.addShape(object);
     }
 }

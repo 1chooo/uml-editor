@@ -10,32 +10,36 @@ import Shapes.GeneralizationLine;
 import Shapes.Line;
 import Shapes.Shape;
 
+import Utils.MODES;
+
 public class CreateLineMode extends Mode {
 
-	private String LineMode = "";
+	private String lineMode;
 	private List<Shape> shapes;
 	private Shape shape1, shape2;
 	private int port1, port2;
 
 	private Point point1, point2;
 
-	public CreateLineMode(String LineMode) {
-		this.LineMode = LineMode;
+	public CreateLineMode(String lineMode) {
+		this.lineMode = lineMode;
 	}
 
 	public Line createLine(String type, Point start, Point end) {
 		Line line = null;
 
-		// TODO: Change to enum
 		switch (type) {
-			case "AssociationLine":
+			case MODES.ASSOCIATION_LINE:
 				line = new AssociationLine(start.x, start.y, end.x, end.y);
 				break;
-			case "GeneralizationLine":
+			case MODES.GENERALIZATION_LINE:
 				line = new GeneralizationLine(start.x, start.y, end.x, end.y);
 				break;
-			case "CompositionLine":
+			case MODES.COMPOSITION_LINE:
 				line = new CompositionLine(start.x, start.y, end.x, end.y);
+				break;
+			default:
+				System.out.println("Unsupported Line Type");
 				break;
 		}
 
@@ -49,7 +53,7 @@ public class CreateLineMode extends Mode {
 
 	public void mouseDragged(MouseEvent e) {
 		if (point1 != null) {
-			Line tmpLine = createLine(LineMode, point1, e.getPoint());
+			Line tmpLine = createLine(lineMode, point1, e.getPoint());
 			canvas.tmpLine = tmpLine;
 			canvas.repaint();
 		}
@@ -59,7 +63,7 @@ public class CreateLineMode extends Mode {
 		if (point1 != null) {
 			point2 = findObject(e.getPoint(), 2);
 			if (point2 != null && shape1 != shape2) {
-				Line line = createLine(LineMode, point1, point2);
+				Line line = createLine(lineMode, point1, point2);
 				canvas.addLine(line);
 
 				line.setPort(shape1.getPort(port1), shape2.getPort(port2));
