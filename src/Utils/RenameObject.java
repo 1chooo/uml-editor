@@ -91,7 +91,7 @@ public class RenameObject extends JFrame {
             new Warning(
                     "Please enter a name with less than 10 characters.", 400);
         } else {
-            canvas.selectedObj.changeName(input);
+            canvas.selectedObject.changeName(input);
             dispose();
         }
     }

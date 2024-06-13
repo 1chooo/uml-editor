@@ -76,8 +76,8 @@ public class SidePanel extends JToolBar {
 				curBtn = (JButton) e.getSource();
 				curBtn.setBackground(new java.awt.Color(120, 120, 120));
 
-				canvas.setCurMode(m);
-				canvas.selectedObj = null;
+				canvas.setCurrrentMode(m);
+				canvas.selectedObject = null;
 			}
 		});
 

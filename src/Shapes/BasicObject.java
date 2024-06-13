@@ -44,7 +44,9 @@ public abstract class BasicObject extends Shape {
 
 	public void drawPort(Graphics g) {
 		for (int i = 0; i < ports.length; i++) {
-			g.fillRect(ports[i].x, ports[i].y, ports[i].width, ports[i].height);
+			g.fillRect(
+					ports[i].x, ports[i].y,
+					ports[i].width, ports[i].height);
 		}
 	}
 

@@ -40,8 +40,8 @@ public class MenuBarListener {
     public ActionListener getChangeNameListener() {
         return new ActionListener() {
             public void actionPerformed(ActionEvent ev) {
-                if (canvas.selectedObj != null) {
-                    new RenameObject(canvas.selectedObj.name);
+                if (canvas.selectedObject != null) {
+                    new RenameObject(canvas.selectedObject.name);
                 } else {
                     new Warning("You must select exactly a object !", 300);
                 }
@@ -74,7 +74,7 @@ public class MenuBarListener {
     public ActionListener getUnGroupListener() {
         return new ActionListener() {
             public void actionPerformed(ActionEvent ev) {
-                Shape shape = canvas.selectedObj;
+                Shape shape = canvas.selectedObject;
 
                 if (shape != null && (shape instanceof Group)) {
                     canvas.unGroup();

@@ -23,11 +23,11 @@ import Shapes.Line;
 import Shapes.Shape;
 
 public class Canvas extends JPanel {
-	public Shape selectedObj = null;
+	public Shape selectedObject = null;
 	public Line tmpLine = null;
 	public Rectangle selectedArea = null;
 
-	protected Mode curMode = null;
+	protected Mode currrentMode = null;
 
 	private EventListener listener = null;
 	private List<Shape> shapes = new ArrayList<Shape>();
@@ -59,8 +59,8 @@ public class Canvas extends JPanel {
 	}
 
 	public void changeObjName(String name) {
-		if (selectedObj != null)
-			selectedObj.changeName(name);
+		if (selectedObject != null)
+			selectedObject.changeName(name);
 	}
 
 	public void createGroup() {
@@ -76,25 +76,25 @@ public class Canvas extends JPanel {
 		}
 		group.setEdge();
 		shapes.add(group);
-		selectedObj = null;
+		selectedObject = null;
 	}
 
 	public void unGroup() {
-		Group group = (Group) selectedObj;
+		Group group = (Group) selectedObject;
 		List<Shape> inGroup = group.getShapes();
 		for (int i = 0; i < inGroup.size(); i++) {
 			Shape shape = inGroup.get(i);
 			shapes.add(shape);
 		}
-		shapes.remove(selectedObj);
-		selectedObj = null;
+		shapes.remove(selectedObject);
+		selectedObject = null;
 	}
 
-	public void setCurMode(Mode mode) {
+	public void setCurrrentMode(Mode mode) {
 		removeMouseListener((MouseListener) listener);
 		removeMouseMotionListener((MouseMotionListener) listener);
-		curMode = mode;
-		listener = curMode;
+		currrentMode = mode;
+		listener = currrentMode;
 		addMouseListener((MouseListener) listener);
 		addMouseMotionListener((MouseMotionListener) listener);
 	}
@@ -137,18 +137,20 @@ public class Canvas extends JPanel {
 		}
 
 		graphics.setColor(new Color(0, 0, 0));
-		if (selectedObj != null)
-			selectedObj.drawPort(graphics);
+		if (selectedObject != null)
+			selectedObject.drawPort(graphics);
 
 		if (tmpLine != null)
 			tmpLine.draw(graphics);
 
 		if (selectedArea != null) {
 			graphics.setColor(new Color(242, 242, 242, 50));
-			graphics.fillRect(selectedArea.x, selectedArea.y,
+			graphics.fillRect(
+					selectedArea.x, selectedArea.y,
 					selectedArea.width, selectedArea.height);
 			graphics.setColor(new Color(242, 242, 242));
-			graphics.drawRect(selectedArea.x, selectedArea.y,
+			graphics.drawRect(
+					selectedArea.x, selectedArea.y,
 					selectedArea.width, selectedArea.height);
 
 		}
