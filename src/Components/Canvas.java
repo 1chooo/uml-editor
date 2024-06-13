@@ -58,11 +58,6 @@ public class Canvas extends JPanel {
 		lines.add(line);
 	}
 
-	public void changeObjName(String name) {
-		if (selectedObject != null)
-			selectedObject.changeName(name);
-	}
-
 	public void createGroup() {
 		Group group = new Group();
 		List<Shape> selectedShapes = new ArrayList<>();
@@ -113,6 +108,8 @@ public class Canvas extends JPanel {
 				&& selectedArea.contains(bottom2));
 	}
 
+	// TODO: Separate paint method into multiple methods
+	@Override
 	public void paint(Graphics graphics) {
 		super.paint(graphics);
 
@@ -154,8 +151,8 @@ public class Canvas extends JPanel {
 			graphics.drawRect(
 					selectedArea.x, selectedArea.y,
 					selectedArea.width, selectedArea.height);
-
 		}
+
 		repaint();
 	}
 }
