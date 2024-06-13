@@ -13,7 +13,7 @@ public class SelectMode extends Mode {
 	private Point firstMouse;
 	private int inside = -5;
 
-	public SelectMode() {
+	public SelectMode(String selectMode) {
 	}
 
 	public void mousePressed(MouseEvent e) {

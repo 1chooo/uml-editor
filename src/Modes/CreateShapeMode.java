@@ -6,23 +6,25 @@ import Shapes.ClassObject;
 import Shapes.Shape;
 import Shapes.UseCaseObject;
 
-public class CreateShapeMode extends Mode {
-    private String shapeType;
+import Utils.MODES;
 
-    public CreateShapeMode(String shapeType) {
-        this.shapeType = shapeType;
+public class CreateShapeMode extends Mode {
+    private String shapeMode;
+
+    public CreateShapeMode(String shapeMode) {
+        this.shapeMode = shapeMode;
     }
 
     public void mousePressed(MouseEvent e) {
         System.out.println("x: " + e.getX() + "  y: " + e.getY());
         Shape object = null;
-        switch (shapeType) {
-            // TODO: Change to enum
-            case "Class":
-                object = new ClassObject(e.getX(), e.getY(), "Class"); // change to enum or Action Class as aggregation
+
+        switch (shapeMode) {
+            case MODES.CLASS:
+                object = new ClassObject(e.getX(), e.getY(),  MODES.CLASS);
                 break;
-            case "Use Case":
-                object = new UseCaseObject(e.getX(), e.getY(), "Use Case");
+            case MODES.USE_CASE:
+                object = new UseCaseObject(e.getX(), e.getY(),  MODES.USE_CASE);
                 break;
             default:
                 System.out.println("Unsupported shape type");

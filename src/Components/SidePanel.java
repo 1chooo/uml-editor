@@ -15,12 +15,12 @@ import Modes.CreateShapeMode;
 import Modes.CreateLineMode;
 import Modes.Mode;
 import Modes.SelectMode;
+import Utils.MODES;
 
 public class SidePanel extends JToolBar {
 
 	private JButton curBtn = null;
 	private Canvas canvas;
-	private Mode mode;
 
 	public SidePanel() {
 		canvas = Canvas.getInstance();
@@ -30,30 +30,40 @@ public class SidePanel extends JToolBar {
 	}
 
 	private void initializeButtons() {
-		mode = new SelectMode();
-		JButton selectBtn = createButton("Select", "imgs/select.png", mode);
+		JButton selectBtn = createButton(
+				MODES.getModeButtonName(MODES.SELECT),
+				MODES.getModeImagePath(MODES.SELECT),
+				new SelectMode(MODES.SELECT));
 		this.add(selectBtn);
 
-		mode = new CreateLineMode("AssociationLine");
-		JButton associationBtn = createButton("<html>Association<br>Line</html>", "imgs/association-line.png", mode);
+		JButton associationBtn = createButton(
+				MODES.getModeButtonName(MODES.ASSOCIATION_LINE),
+				MODES.getModeImagePath(MODES.ASSOCIATION_LINE),
+				new CreateLineMode(MODES.ASSOCIATION_LINE));
 		this.add(associationBtn);
 
-		mode = new CreateLineMode("GeneralizationLine");
-		JButton generalizationBtn = createButton("<html>Generalization<br>Line</html>", "imgs/generation-line.png",
-				mode);
+		JButton generalizationBtn = createButton(
+				MODES.getModeButtonName(MODES.GENERALIZATION_LINE),
+				MODES.getModeImagePath(MODES.GENERALIZATION_LINE),
+				new CreateLineMode(MODES.GENERALIZATION_LINE));
 		this.add(generalizationBtn);
 
-		mode = new CreateLineMode("CompositionLine");
-		JButton compositionBtn = createButton("<html>Composition<br>Line</html>", "imgs/composition-line.png", mode);
+		JButton compositionBtn = createButton(
+				MODES.getModeButtonName(MODES.COMPOSITION_LINE),
+				MODES.getModeImagePath(MODES.COMPOSITION_LINE),
+				new CreateLineMode(MODES.COMPOSITION_LINE));
 		this.add(compositionBtn);
 
-		
-		mode = new CreateShapeMode("Class");
-		JButton classBtn = createButton("Class", "imgs/class.png", mode);
+		JButton classBtn = createButton(
+				MODES.getModeButtonName(MODES.CLASS),
+				MODES.getModeImagePath(MODES.CLASS),
+				new CreateShapeMode(MODES.CLASS));
 		this.add(classBtn);
 
-		mode = new CreateShapeMode("Use Case");
-		JButton useCaseBtn = createButton("Use Case", "imgs/use-case.png", mode);
+		JButton useCaseBtn = createButton(
+				MODES.getModeButtonName(MODES.USE_CASE),
+				MODES.getModeImagePath(MODES.USE_CASE),
+				new CreateShapeMode(MODES.USE_CASE));
 		this.add(useCaseBtn);
 	}
 
