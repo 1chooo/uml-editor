@@ -1,6 +1,6 @@
 package Shapes;
 
-import java.awt.*;
+import java.awt.Graphics;
 
 public class GeneralizationLine extends Line {
 

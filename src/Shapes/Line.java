@@ -27,7 +27,6 @@ public abstract class Line extends Shape {
 
 		this.x2 = (int) this.ports[1].getCenterX();
 		this.y2 = (int) this.ports[1].getCenterY();
-
 	}
 
 	public int isInside(Point p) {

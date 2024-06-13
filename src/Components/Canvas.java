@@ -4,11 +4,18 @@ import java.util.ArrayList;
 import java.util.EventListener;
 import java.util.List;
 
-import java.awt.*;
+import java.awt.Rectangle;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics2D;
+import java.awt.BasicStroke;
+import java.awt.Graphics;
+import java.awt.Point;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-import javax.swing.*;
+import javax.swing.JPanel;
+import javax.swing.BorderFactory;
 
 import Modes.Mode;
 import Shapes.Group;
@@ -16,18 +23,17 @@ import Shapes.Line;
 import Shapes.Shape;
 
 public class Canvas extends JPanel {
-
-	private static Canvas instance = null;
-
-	private EventListener listener = null;
-	protected Mode curMode = null;
-
 	public Shape selectedObj = null;
 	public Line tmpLine = null;
-
 	public Rectangle selectedArea = null;
+
+	protected Mode curMode = null;
+
+	private EventListener listener = null;
 	private List<Shape> shapes = new ArrayList<Shape>();
 	private List<Line> lines = new ArrayList<Line>();
+
+	private static Canvas instance = null;
 
 	public Canvas() {
 		this.setBorder(BorderFactory.createLineBorder(Color.black));
@@ -65,7 +71,7 @@ public class Canvas extends JPanel {
 				shape.isSelected = false;
 				group.addShape(shape);
 				shapes.remove(i);
-				i--;
+				i--; // refactor
 			}
 		}
 		group.setEdge();

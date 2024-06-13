@@ -8,8 +8,12 @@ import Components.Canvas;
 
 public abstract class Mode
 		implements MouseListener, MouseMotionListener {
-	protected Canvas canvas = Canvas.getInstance();
+	protected Canvas canvas;
 
+	public Mode() {
+		canvas = Canvas.getInstance();
+	}
+	
 	public void mousePressed(MouseEvent e) {
 	}
 

@@ -5,7 +5,6 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -89,7 +88,7 @@ public class RenameObject extends JFrame {
     private void onOKButtonClicked() {
         String input = textField.getText();
         if (input.length() > 10) {
-            Warning outOfSize = new Warning(
+            new Warning(
                     "Please enter a name with less than 10 characters.", 400);
         } else {
             canvas.selectedObj.changeName(input);

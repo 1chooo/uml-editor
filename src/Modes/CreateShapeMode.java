@@ -16,8 +16,9 @@ public class CreateShapeMode extends Mode {
         System.out.println("x: " + e.getX() + "  y: " + e.getY());
         Shape obj = null;
         switch (shapeType) {
+            // TODO: Change to enum
             case "Class":
-                obj = new ClassObj(e.getX(), e.getY(), "Class");
+                obj = new ClassObj(e.getX(), e.getY(), "Class");    // change to enum or Action Class as aggregation
                 break;
             case "Use Case":
                 obj = new UseCaseObj(e.getX(), e.getY(), "Use Case");

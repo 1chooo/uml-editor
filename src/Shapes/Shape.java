@@ -2,17 +2,16 @@ package Shapes;
 
 import java.awt.Graphics;
 import java.awt.Point;
+import java.awt.Font;
 
 import Components.Canvas;
-
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Point;
 
 public abstract class Shape {
 	protected int x1, y1, x2, y2;
 	public boolean isSelected = false;
 	public String name;
+	public Canvas canvas = Canvas.getInstance();
+	protected Font font = new Font(Font.DIALOG, Font.BOLD, 13);
 
 	public int getX1() {
 		return this.x1;
@@ -29,9 +28,6 @@ public abstract class Shape {
 	public int getY2() {
 		return this.y2;
 	}
-
-	public Canvas canvas = Canvas.getInstance();
-	protected Font font = new Font(Font.DIALOG, Font.BOLD, 13);
 
 	public abstract void draw(Graphics g);
 

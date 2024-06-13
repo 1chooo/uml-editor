@@ -3,8 +3,6 @@ package Shapes;
 import java.util.ArrayList;
 import java.util.List;
 
-import Components.Canvas;
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
@@ -16,6 +14,7 @@ public class Group extends Shape {
 	private List<Shape> groupShapes = new ArrayList<Shape>();
 	private Rectangle groupRec = new Rectangle();
 
+	// TODO: We should use public here?? (Need to be researched)
 	public Shape selectedObj = null;
 
 	// constructor

@@ -11,8 +11,6 @@ import Shapes.Shape;
 import Utils.RenameObject;
 import Utils.Warning;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.InputEvent;
 
 public class MenuBarListener {
     private Canvas canvas;
@@ -43,9 +41,9 @@ public class MenuBarListener {
         return new ActionListener() {
             public void actionPerformed(ActionEvent ev) {
                 if (canvas.selectedObj != null) {
-                    RenameObject dialog = new RenameObject(canvas.selectedObj.name);
+                    new RenameObject(canvas.selectedObj.name);
                 } else {
-                    Warning noObj = new Warning("You must select exactly a object !", 300);
+                    new Warning("You must select exactly a object !", 300);
                 }
             }
         };
@@ -67,7 +65,7 @@ public class MenuBarListener {
                 if (cnt >= 2) {
                     canvas.createGroup();
                 } else {
-                    Warning lessThanTwoObj = new Warning("You must select two or more objects !", 300);
+                    new Warning("You must select two or more objects !", 300);
                 }
             }
         };
@@ -81,7 +79,7 @@ public class MenuBarListener {
                 if (shape != null && (shape instanceof Group)) {
                     canvas.unGroup();
                 } else {
-                    Warning nullObj = new Warning("You must select exactly a group object !", 300);
+                    new Warning("You must select exactly a group object !", 300);
                 }
             }
         };
