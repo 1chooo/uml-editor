@@ -6,12 +6,10 @@ import java.awt.Polygon;
 
 public abstract class BasicObject extends Shape {
 
-	// variables
 	private int width, height;
 	private int moveX, moveY;
 	protected Port[] ports = new Port[4];
 
-	// public method
 	public abstract void draw(Graphics g);
 
 	public void setLocation(Point p1, Point p2) {
@@ -43,11 +41,10 @@ public abstract class BasicObject extends Shape {
 	}
 
 	public void drawPort(Graphics g) {
-		for (int i = 0; i < ports.length; i++) {
+		for (int i = 0; i < ports.length; i++)
 			g.fillRect(
 					ports[i].x, ports[i].y,
 					ports[i].width, ports[i].height);
-		}
 	}
 
 	public int getWidth() {
@@ -88,9 +85,8 @@ public abstract class BasicObject extends Shape {
 			polygon.addPoint(points[next].x, points[next].y);
 			polygon.addPoint(c.x, c.y);
 
-			if (polygon.contains(p)) {
+			if (polygon.contains(p))
 				return i;
-			}
 		}
 		return -1;
 	}

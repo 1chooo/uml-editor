@@ -39,12 +39,10 @@ public class MenuBarListener {
     public ActionListener getChangeNameListener() {
         return new ActionListener() {
             public void actionPerformed(ActionEvent ev) {
-                if (canvas.selectedObject != null) {
+                if (canvas.selectedObject != null)
                     new RenameObject(canvas.selectedObject.name);
-                } else {
-                    new Warning(
-                            Helper.SELECT_OBJECT_WARNING.getValue(), 300);
-                }
+                else
+                    new Warning(Helper.SELECT_OBJECT_WARNING.getValue(), 300);
             }
         };
     }
@@ -54,20 +52,17 @@ public class MenuBarListener {
             public void actionPerformed(ActionEvent ev) {
                 shapes = canvas.getShapes();
                 System.out.println("shapes size :" + shapes.size());
-                int cnt = 0;
+                int count = 0;
                 for (int i = 0; i < shapes.size(); i++) {
                     Shape shape = shapes.get(i);
-                    if (shape.isSelected) {
-                        cnt++;
-                    }
+                    if (shape.isSelected)
+                        count++;
                 }
 
-                if (cnt >= 2) {
+                if (count >= 2)
                     canvas.createGroup();
-                } else {
-                    new Warning(
-                            Helper.GET_GROUP_WARNING.getValue(), 300);
-                }
+                else
+                    new Warning(Helper.GET_GROUP_WARNING.getValue(), 300);
             }
         };
     }
@@ -77,12 +72,10 @@ public class MenuBarListener {
             public void actionPerformed(ActionEvent ev) {
                 Shape shape = canvas.selectedObject;
 
-                if (shape != null && (shape instanceof Group)) {
+                if (shape != null && (shape instanceof Group))
                     canvas.unGroup();
-                } else {
-                    new Warning(
-                            Helper.GET_UNGROUP_WARNING.getValue(), 300);
-                }
+                else
+                    new Warning(Helper.GET_UNGROUP_WARNING.getValue(), 300);
             }
         };
     }

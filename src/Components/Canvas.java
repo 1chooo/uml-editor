@@ -63,6 +63,7 @@ public class Canvas extends JPanel {
 			selectedObject.changeName(name);
 	}
 
+	// TODO: no meaning about i--
 	public void createGroup() {
 		Group group = new Group();
 		for (int i = 0; i < shapes.size(); i++) {
@@ -102,13 +103,13 @@ public class Canvas extends JPanel {
 	public boolean withinSelectedArea(Shape shape) {
 		Point top1 = new Point(shape.getX1(), shape.getY1());
 		Point top2 = new Point(shape.getX2(), shape.getY1());
-		Point bot1 = new Point(shape.getX1(), shape.getY2());
-		Point bot2 = new Point(shape.getX2(), shape.getY2());
+		Point bottom1 = new Point(shape.getX1(), shape.getY2());
+		Point bottom2 = new Point(shape.getX2(), shape.getY2());
 
 		return (selectedArea.contains(top1)
 				&& selectedArea.contains(top2)
-				&& selectedArea.contains(bot1)
-				&& selectedArea.contains(bot2));
+				&& selectedArea.contains(bottom1)
+				&& selectedArea.contains(bottom2));
 	}
 
 	public void paint(Graphics graphics) {

@@ -10,17 +10,14 @@ import java.awt.Rectangle;
 
 public class Group extends Shape {
 
-	// variables
 	private List<Shape> groupShapes = new ArrayList<Shape>();
 	private Rectangle groupRec = new Rectangle();
 	private Shape selectedObject = null;
 
-	// constructor
 	public Group() {
 		this.name = "Group";
 	}
 
-	// methods
 	public void draw(Graphics g) {
 		for (int i = groupShapes.size() - 1; i >= 0; i--) {
 			Shape shape = groupShapes.get(i);

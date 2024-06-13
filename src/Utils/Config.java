@@ -1,6 +1,7 @@
 package Utils;
 
 public enum Config {
+    APP_NAME("UML Editor"),
     MENU_APP_NAME("UML Editor"),
     MENU_FILE("File"),
     MENU_EDIT("Edit"),
@@ -9,7 +10,6 @@ public enum Config {
     MENU_ITEM_CHANGE_OBJ_NAME("Change Object Name"),
     MENU_ITEM_GROUP("Group"),
     MENU_ITEM_UNGROUP("UnGroup");
-
 
     private final String value;
 

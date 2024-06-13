@@ -15,21 +15,20 @@ public class CreateShapeMode extends Mode {
 
     public void mousePressed(MouseEvent e) {
         System.out.println("x: " + e.getX() + "  y: " + e.getY());
-        Shape obj = null;
+        Shape object = null;
         switch (shapeType) {
             // TODO: Change to enum
             case "Class":
-                obj = new ClassObject(e.getX(), e.getY(), "Class");    // change to enum or Action Class as aggregation
+                object = new ClassObject(e.getX(), e.getY(), "Class"); // change to enum or Action Class as aggregation
                 break;
             case "Use Case":
-                obj = new UseCaseObject(e.getX(), e.getY(), "Use Case");
+                object = new UseCaseObject(e.getX(), e.getY(), "Use Case");
                 break;
             default:
                 System.out.println("Unsupported shape type");
                 break;
         }
-        if (obj != null) {
-            canvas.addShape(obj);
-        }
+        if (object != null)
+            canvas.addShape(object);
     }
 }

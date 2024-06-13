@@ -4,7 +4,6 @@ import java.awt.Graphics;
 
 public class GeneralizationLine extends Line {
 
-	// constructor
 	public GeneralizationLine(int x1, int y1, int x2, int y2) {
 		this.x1 = x1;
 		this.y1 = y1;
@@ -12,7 +11,6 @@ public class GeneralizationLine extends Line {
 		this.y2 = y2;
 	}
 
-	// public method
 	public void draw(Graphics g) {
 		int width = 10, height = 10;
 		int dx = x2 - x1, dy = y2 - y1;

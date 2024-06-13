@@ -7,23 +7,21 @@ import javax.swing.JFrame;
 import Components.Canvas;
 import Components.MenuBar;
 import Components.SidePanel;
+import Utils.Config;
 
 public class UMLEditor extends JFrame {
 
-	// private variables
 	private SidePanel toolbar;
 	private MenuBar menubar;
 	private Canvas canvas;
 	private int width = 1280;
 	private int height = 720;
 
-	// constructor
 	public UMLEditor() {
-		super("UML Editor");
+		super(Config.APP_NAME.getValue());
 		initComponents();
 	}
 
-	// private methods
     private void initComponents() {
         toolbar = new SidePanel();
 		toolbar.setOpaque(true);
