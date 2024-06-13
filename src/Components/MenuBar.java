@@ -10,7 +10,6 @@ import Utils.Config;
 public class MenuBar extends JMenuBar {
 
     private Canvas canvas;
-
     private MenuBarListener menuBarListener;
 
     public MenuBar() {
@@ -20,42 +19,46 @@ public class MenuBar extends JMenuBar {
     private void initialize() {
         canvas = Canvas.getInstance();
         menuBarListener = new MenuBarListener(canvas);
-        createXmlEditorMenu();
+        createUmlEditorMenu();
         createFileMenu();
         createEditMenu();
     }
 
-    private void createXmlEditorMenu() {
-        JMenu xmlEditor = new JMenu(Config.MENU_APP_NAME.getValue());
-        JMenuItem about = new JMenuItem(Config.MENU_ITEM_ABOUT.getValue());
-        about.addActionListener(menuBarListener.getAboutListener());
-        xmlEditor.add(about);
-        JMenuItem quit = new JMenuItem(Config.MENU_ITEM_QUIT.getValue());
-        quit.addActionListener(menuBarListener.getQuitListener()); // Exit the application
-        xmlEditor.add(quit);
+    private void createUmlEditorMenu() {
+        JMenu umlEditor = new JMenu(Config.APP_NAME);
 
-        this.add(xmlEditor);
+        JMenuItem about = new JMenuItem(Config.MENU_ITEM_ABOUT);
+        about.addActionListener(menuBarListener.getAboutListener());
+        umlEditor.add(about);
+        JMenuItem version = new JMenuItem(Config.APP_VERSION);
+        version.addActionListener(menuBarListener.getVersionListener());
+        umlEditor.add(version);
+        JMenuItem quit = new JMenuItem(Config.MENU_ITEM_QUIT);
+        quit.addActionListener(menuBarListener.getQuitListener());
+        umlEditor.add(quit);
+
+        this.add(umlEditor);
     }
 
     private void createFileMenu() {
-        JMenu file = new JMenu(Config.MENU_FILE.getValue());
+        JMenu file = new JMenu(Config.MENU_FILE);
         this.add(file);
     }
 
     private void createEditMenu() {
-        JMenu edit = new JMenu(Config.MENU_EDIT.getValue());
+        JMenu edit = new JMenu(Config.MENU_EDIT);
 
-        JMenuItem changeObjName = new JMenuItem(Config.MENU_ITEM_CHANGE_OBJ_NAME.getValue());
+        JMenuItem changeObjName = new JMenuItem(Config.MENU_ITEM_CHANGE_OBJ_NAME);
         changeObjName.addActionListener(menuBarListener.getChangeNameListener());
         edit.add(changeObjName);
         edit.addSeparator();
 
-        JMenuItem group = new JMenuItem(Config.MENU_ITEM_GROUP.getValue());
+        JMenuItem group = new JMenuItem(Config.MENU_ITEM_GROUP);
         group.addActionListener(menuBarListener.getGroupListener());
         edit.add(group);
         edit.addSeparator();
 
-        JMenuItem unGroup = new JMenuItem(Config.MENU_ITEM_UNGROUP.getValue());
+        JMenuItem unGroup = new JMenuItem(Config.MENU_ITEM_UNGROUP);
         unGroup.addActionListener(menuBarListener.getUnGroupListener());
         edit.add(unGroup);
 

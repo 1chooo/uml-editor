@@ -18,7 +18,7 @@ public class UMLEditor extends JFrame {
 	private int height = 720;
 
 	public UMLEditor() {
-		super(Config.APP_NAME.getValue());
+		super(Config.APP_NAME);
 		initComponents();
 	}
 

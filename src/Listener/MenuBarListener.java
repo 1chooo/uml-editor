@@ -23,7 +23,15 @@ public class MenuBarListener {
     public ActionListener getAboutListener() {
         return new ActionListener() {
             public void actionPerformed(ActionEvent ev) {
-                JOptionPane.showMessageDialog(null, Helper.ABOUT_UML_MESSAGE.getValue());
+                JOptionPane.showMessageDialog(null, Helper.ABOUT_UML_MESSAGE);
+            }
+        };
+    }
+
+    public ActionListener getVersionListener() {
+        return new ActionListener() {
+            public void actionPerformed(ActionEvent ev) {
+                JOptionPane.showMessageDialog(null, Helper.UML_VERSION_MESSAGE);
             }
         };
     }
@@ -42,7 +50,7 @@ public class MenuBarListener {
                 if (canvas.selectedObject != null)
                     new RenameObject(canvas.selectedObject.name);
                 else
-                    new Warning(Helper.SELECT_OBJECT_WARNING.getValue(), 300);
+                    new Warning(Helper.SELECT_OBJECT_WARNING, 300);
             }
         };
     }
@@ -62,7 +70,7 @@ public class MenuBarListener {
                 if (count >= 2)
                     canvas.createGroup();
                 else
-                    new Warning(Helper.GET_GROUP_WARNING.getValue(), 300);
+                    new Warning(Helper.GET_GROUP_WARNING, 300);
             }
         };
     }
@@ -75,7 +83,7 @@ public class MenuBarListener {
                 if (shape != null && (shape instanceof Group))
                     canvas.unGroup();
                 else
-                    new Warning(Helper.GET_UNGROUP_WARNING.getValue(), 300);
+                    new Warning(Helper.GET_UNGROUP_WARNING, 300);
             }
         };
     }

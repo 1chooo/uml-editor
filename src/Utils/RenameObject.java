@@ -90,7 +90,7 @@ public class RenameObject extends JFrame {
 
         if (input.length() > 10) {
             new Warning(
-                    Helper.NAME_LENGTH_WARNING.getValue(), 400);
+                    Helper.NAME_LENGTH_WARNING, 400);
         } else {
             canvas.selectedObject.changeName(input);
             dispose();
