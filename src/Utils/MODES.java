@@ -26,7 +26,7 @@ public class MODES {
         }
     }
     public static String getModeImagePath(String mode) {
-        if(mode.equals(mode)){
+        if(mode.equals(SELECT)){
             return "imgs/select.png";
         } else if (mode.equals(ASSOCIATION_LINE)) {
             return "imgs/association-line.png";
