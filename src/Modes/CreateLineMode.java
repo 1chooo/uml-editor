@@ -28,21 +28,15 @@ public class CreateLineMode extends Mode {
 	public Line createLine(String type, Point start, Point end) {
 		Line line = null;
 
-		switch (type) {
-			case MODES.ASSOCIATION_LINE:
-				line = new AssociationLine(start.x, start.y, end.x, end.y);
-				break;
-			case MODES.GENERALIZATION_LINE:
-				line = new GeneralizationLine(start.x, start.y, end.x, end.y);
-				break;
-			case MODES.COMPOSITION_LINE:
-				line = new CompositionLine(start.x, start.y, end.x, end.y);
-				break;
-			default:
-				System.out.println("Unsupported Line Type");
-				break;
+		if(type.equals(MODES.ASSOCIATION_LINE)){
+			line = new AssociationLine(start.x, start.y, end.x, end.y);
+		} else if(type.equals(MODES.GENERALIZATION_LINE)){
+			line = new GeneralizationLine(start.x, start.y, end.x, end.y);
+		} else if(type.equals(MODES.COMPOSITION_LINE)) {
+			line = new CompositionLine(start.x, start.y, end.x, end.y);
+		} else {
+			System.out.println("Unsupported Line Type");
 		}
-
 		return line;
 	}
 

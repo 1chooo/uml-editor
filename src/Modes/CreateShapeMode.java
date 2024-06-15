@@ -19,17 +19,15 @@ public class CreateShapeMode extends Mode {
         System.out.println("x: " + e.getX() + "  y: " + e.getY());
         Shape object = null;
 
-        switch (shapeMode) {
-            case MODES.CLASS:
-                object = new ClassObject(e.getX(), e.getY(),  MODES.CLASS);
-                break;
-            case MODES.USE_CASE:
-                object = new UseCaseObject(e.getX(), e.getY(),  MODES.USE_CASE);
-                break;
-            default:
-                System.out.println("Unsupported shape type");
-                break;
+
+        if(shapeMode.equals(MODES.CLASS)){
+            object = new ClassObject(e.getX(), e.getY(),  MODES.CLASS);
+        } else if(shapeMode.equals(MODES.USE_CASE)) {
+            object = new UseCaseObject(e.getX(), e.getY(),  MODES.USE_CASE);
+        } else {
+            System.out.println("Unsupported shape type");
         }
+
         if (object != null)
             canvas.addShape(object);
     }
