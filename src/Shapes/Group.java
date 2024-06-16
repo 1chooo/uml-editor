@@ -81,18 +81,6 @@ public class Group extends Shape {
 		this.y2 = groupRec.y + groupRec.height;
 	}
 
-	public int isInside(Point p) {
-		for (int i = 0; i < groupShapes.size(); i++) {
-			Shape shape = groupShapes.get(i);
-			int inside = shape.isInside(p);
-			if (inside >= 0) {
-				selectedObject = shape;
-				return 4;
-			}
-		}
-		return -1;
-	}
-
 	public void changeName(String name) {
 		this.name = name;
 	}
