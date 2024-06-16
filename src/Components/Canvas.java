@@ -31,7 +31,6 @@ public class Canvas extends JPanel {
 
 	private EventListener listener = null;
 	private List<Shape> shapes = new ArrayList<Shape>();
-	private List<Line> lines = new ArrayList<Line>();
 
 	private static Canvas instance = null;
 
@@ -55,7 +54,7 @@ public class Canvas extends JPanel {
 	}
 
 	public void addLine(Line line) {
-		lines.add(line);
+		shapes.add(line);
 	}
 
 	public void createGroup() {
@@ -130,9 +129,12 @@ public class Canvas extends JPanel {
 		}
 
 		graphics.setColor(new Color(0, 0, 0));
-		for (int i = lines.size() - 1; i >= 0; i--) {
-			Line line = lines.get(i);
-			line.draw(graphics);
+		for (int i = shapes.size() - 1; i >= 0; i--) {
+			Shape shape = shapes.get(i);
+			if (shape instanceof Line) {
+				Line line = (Line) shape;
+				line.draw(graphics);
+			}
 		}
 
 		graphics.setColor(new Color(0, 0, 0));
