@@ -1,10 +1,11 @@
 package Shapes;
 
+import Components.Canvas;
+
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Font;
-
-import Components.Canvas;
+import java.awt.Polygon;
 
 public abstract class Shape {
 	protected int x1, y1, x2, y2;
@@ -32,8 +33,6 @@ public abstract class Shape {
 
 	public abstract void draw(Graphics g);
 
-	public abstract int isInside(Point p);
-
 	public void drawPort(Graphics g) {
 	};
 
@@ -56,4 +55,23 @@ public abstract class Shape {
 	public Shape getSelectedObject() {
 		return null;
 	};
+
+	public int isInside(Point p) {
+		Point c = new Point();
+		c.x = (x1 + x2) / 2;
+		c.y = (y1 + y2) / 2;
+		Point[] points = {
+				new Point(x1, y1), new Point(x2, y1),
+				new Point(x2, y2), new Point(x1, y2) };
+		for (int i = 0; i < points.length; i++) {
+			Polygon polygon = new Polygon();
+			int next = ((i + 1) % 4);
+			polygon.addPoint(points[i].x, points[i].y);
+			polygon.addPoint(points[next].x, points[next].y);
+			polygon.addPoint(c.x, c.y);
+			if (polygon.contains(p))
+				return i;
+		}
+		return -1;
+	}
 }
