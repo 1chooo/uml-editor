@@ -108,7 +108,6 @@ public class Canvas extends JPanel {
 				&& selectedArea.contains(bottom2));
 	}
 
-	// TODO: Separate paint method into multiple methods
 	@Override
 	public void paint(Graphics graphics) {
 		super.paint(graphics);
@@ -120,22 +119,13 @@ public class Canvas extends JPanel {
 		graphics.setColor(new Color(0, 0, 0));
 		Graphics2D graphics2D = (Graphics2D) graphics;
 		graphics2D.setStroke(new BasicStroke(4));
-
-		for (int i = shapes.size() - 1; i >= 0; i--) {
-			Shape shape = shapes.get(i);
-			shape.draw(graphics);
-			shape.drawGroup(graphics);
-			if (shape.isSelected == true)
-				shape.drawPort(graphics);
-		}
+		shapeDraw(graphics);
 
 		graphics.setColor(new Color(0, 0, 0));
-		for (int i = lines.size() - 1; i >= 0; i--) {
-			Line line = lines.get(i);
-			line.draw(graphics);
-		}
+		lineDraw(graphics);
 
 		graphics.setColor(new Color(0, 0, 0));
+
 		if (selectedObject != null)
 			selectedObject.drawPort(graphics);
 
@@ -143,16 +133,41 @@ public class Canvas extends JPanel {
 			tmpLine.draw(graphics);
 
 		if (selectedArea != null) {
-			graphics.setColor(new Color(242, 242, 242, 50));
-			graphics.fillRect(
-					selectedArea.x, selectedArea.y,
-					selectedArea.width, selectedArea.height);
-			graphics.setColor(new Color(242, 242, 242));
-			graphics.drawRect(
-					selectedArea.x, selectedArea.y,
-					selectedArea.width, selectedArea.height);
+			checkFillRect(graphics);
+			checkDrawRect(graphics);
 		}
 
 		repaint();
+	}
+
+	private void shapeDraw(Graphics graphics){
+		for (int i = shapes.size() - 1; i >= 0; i--) {
+			Shape shape = shapes.get(i);
+			shape.draw(graphics);
+			shape.drawGroup(graphics);
+			if (shape.isSelected == true)
+				shape.drawPort(graphics);
+		}
+	}
+
+	private void lineDraw(Graphics graphics){
+		for (int i = lines.size() - 1; i >= 0; i--) {
+			Line line = lines.get(i);
+			line.draw(graphics);
+		}
+	}
+
+	private void checkFillRect(Graphics graphics){
+		graphics.setColor(new Color(242, 242, 242, 50));
+		graphics.fillRect(
+				selectedArea.x, selectedArea.y,
+				selectedArea.width, selectedArea.height);
+	}
+
+	private void checkDrawRect(Graphics graphics){
+		graphics.setColor(new Color(242, 242, 242));
+		graphics.drawRect(
+				selectedArea.x, selectedArea.y,
+				selectedArea.width, selectedArea.height);
 	}
 }
