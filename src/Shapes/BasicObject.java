@@ -69,29 +69,6 @@ public abstract class BasicObject extends Shape {
 	}
 
 	@Override
-	public int isInside(Point p) {
-		Point c = new Point();
-		c.x = (x1 + x2) / 2;
-		c.y = (y1 + y2) / 2;
-		Point[] points = {
-				new Point(x1, y1), new Point(x2, y1),
-				new Point(x2, y2), new Point(x1, y2) };
-
-		for (int i = 0; i < points.length; i++) {
-			Polygon polygon = new Polygon();
-
-			int next = ((i + 1) % 4);
-			polygon.addPoint(points[i].x, points[i].y);
-			polygon.addPoint(points[next].x, points[next].y);
-			polygon.addPoint(c.x, c.y);
-
-			if (polygon.contains(p))
-				return i;
-		}
-		return -1;
-	}
-
-	@Override
 	public Port getPort(int index) {
 		return ports[index];
 	}
