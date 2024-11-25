@@ -2,47 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://1chooo.github.io/uml-editor/</loc>
-         <lastmod>2024-06-09</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-11-25</lastmod>
     </url>
     <url>
          <loc>https://1chooo.github.io/uml-editor/LICENSE/</loc>
-         <lastmod>2024-06-09</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-11-25</lastmod>
+    </url>
+    <url>
+         <loc>https://1chooo.github.io/uml-editor/code-walkthrough/</loc>
+         <lastmod>2024-11-25</lastmod>
+    </url>
+    <url>
+         <loc>https://1chooo.github.io/uml-editor/diagram/</loc>
+         <lastmod>2024-11-25</lastmod>
     </url>
     <url>
          <loc>https://1chooo.github.io/uml-editor/howto/</loc>
-         <lastmod>2024-06-09</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-11-25</lastmod>
     </url>
     <url>
          <loc>https://1chooo.github.io/uml-editor/reference/</loc>
-         <lastmod>2024-06-09</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-11-25</lastmod>
     </url>
     <url>
          <loc>https://1chooo.github.io/uml-editor/requirements/</loc>
-         <lastmod>2024-06-09</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-11-25</lastmod>
+    </url>
+    <url>
+         <loc>https://1chooo.github.io/uml-editor/test/</loc>
+         <lastmod>2024-11-25</lastmod>
     </url>
     <url>
          <loc>https://1chooo.github.io/uml-editor/wiki/actions/</loc>
-         <lastmod>2024-06-09</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-11-25</lastmod>
     </url>
     <url>
          <loc>https://1chooo.github.io/uml-editor/wiki/components/</loc>
-         <lastmod>2024-06-09</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-11-25</lastmod>
+    </url>
+    <url>
+         <loc>https://1chooo.github.io/uml-editor/wiki/enum/</loc>
+         <lastmod>2024-11-25</lastmod>
     </url>
     <url>
          <loc>https://1chooo.github.io/uml-editor/wiki/keyboard-listener/</loc>
-         <lastmod>2024-06-09</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-11-25</lastmod>
     </url>
     <url>
          <loc>https://1chooo.github.io/uml-editor/wiki/status-code/</loc>
-         <lastmod>2024-06-09</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-11-25</lastmod>
     </url>
 </urlset>
