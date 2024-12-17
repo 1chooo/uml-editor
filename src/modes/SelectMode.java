@@ -16,6 +16,7 @@ public class SelectMode extends Mode {
 	public SelectMode(String selectMode) {
 	}
 
+	@Override
 	public void mousePressed(MouseEvent e) {
 		firstMouse = e.getPoint();
 		System.out.println("x: " + e.getX() + "  y: " + e.getY());
@@ -37,6 +38,7 @@ public class SelectMode extends Mode {
 		canvas.repaint();
 	}
 
+	@Override
 	public void mouseDragged(MouseEvent e) {
 		if (canvas.selectedObject != null) {
 			if (inside >= 0)
@@ -53,6 +55,7 @@ public class SelectMode extends Mode {
 		}
 	}
 
+	@Override
 	public void mouseReleased(MouseEvent e) {
 		if (canvas.selectedObject == null) {
 			int w = Math.abs(firstMouse.x - e.getPoint().x);

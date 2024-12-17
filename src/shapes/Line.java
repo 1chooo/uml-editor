@@ -5,10 +5,8 @@ import java.awt.Point;
 
 public abstract class Line extends Shape {
 
-	// variables
 	protected Port[] ports = new Port[2];
 
-	// methods
 	public abstract void draw(Graphics g);
 
 	public void setPort(Port port1, Port port2) {
@@ -16,6 +14,7 @@ public abstract class Line extends Shape {
 		this.ports[1] = port2;
 	}
 
+	@Override
 	public void drawPort(Graphics g) {
 		this.draw(g);
 	}

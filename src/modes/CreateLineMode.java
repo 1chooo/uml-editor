@@ -39,11 +39,13 @@ public class CreateLineMode extends Mode {
 		return line;
 	}
 
+	@Override
 	public void mousePressed(MouseEvent e) {
 		shapes = canvas.getShapes();
 		point1 = findObject(e.getPoint(), 1);
 	}
 
+	@Override
 	public void mouseDragged(MouseEvent e) {
 		if (point1 != null) {
 			Line tmpLine = createLine(lineMode, point1, e.getPoint());
@@ -52,6 +54,7 @@ public class CreateLineMode extends Mode {
 		}
 	}
 
+	@Override
 	public void mouseReleased(MouseEvent e) {
 		if (point1 != null) {
 			point2 = findObject(e.getPoint(), 2);

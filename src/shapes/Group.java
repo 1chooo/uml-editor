@@ -41,6 +41,7 @@ public class Group extends Shape {
 		return groupShapes;
 	}
 
+	@Override
 	public void setLocation(Point p1, Point p2) {
 		for (int i = 0; i < groupShapes.size(); i++) {
 			Shape shape = groupShapes.get(i);
@@ -93,6 +94,7 @@ public class Group extends Shape {
 		return -1;
 	}
 
+	@Override
 	public void changeName(String name) {
 		this.name = name;
 	}

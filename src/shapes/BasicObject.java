@@ -12,6 +12,7 @@ public abstract class BasicObject extends Shape {
 
 	public abstract void draw(Graphics g);
 
+	@Override
 	public void setLocation(Point p1, Point p2) {
 		moveX = p1.x - p2.x;
 		moveY = p1.y - p2.y;
@@ -40,6 +41,7 @@ public abstract class BasicObject extends Shape {
 		}
 	}
 
+	@Override
 	public void drawPort(Graphics g) {
 		for (int i = 0; i < ports.length; i++)
 			g.fillRect(
