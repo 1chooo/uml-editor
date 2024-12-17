@@ -9,4 +9,7 @@ public class HELPER {
     public static String UML_VERSION_MESSAGE = "Version 0.0.2";
     public static String RENAME_MESSAGE = "Please enter a new name for the object.";
     public static String RENAME_PROMPT = "New Object Name : ";
+
+    private HELPER() {
+    }
 }

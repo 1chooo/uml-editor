@@ -10,4 +10,7 @@ public class CONFIG {
     public static String MENU_ITEM_CHANGE_OBJ_NAME = "Change Object Name";
     public static String MENU_ITEM_GROUP = "Group";
     public static String MENU_ITEM_UNGROUP = "UnGroup";
+
+    private CONFIG() {
+    }
 }
