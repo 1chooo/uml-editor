@@ -125,7 +125,7 @@ public class Canvas extends JPanel {
 			Shape shape = shapes.get(i);
 			shape.draw(graphics);
 			shape.drawGroup(graphics);
-			if (shape.isSelected == true)
+			if (shape.isSelected)
 				shape.drawPort(graphics);
 		}
 
