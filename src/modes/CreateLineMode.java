@@ -17,10 +17,12 @@ public class CreateLineMode extends Mode {
 
 	private String lineMode;
 	private List<Shape> shapes;
-	private Shape shape1, shape2;
-	private int port1, port2;
-
-	private Point point1, point2;
+	private Shape shape1;
+	private Shape shape2;
+	private int port1;
+	private int port2;
+	private Point point1;
+	private Point point2;
 
 	public CreateLineMode(String lineMode) {
 		this.lineMode = lineMode;
