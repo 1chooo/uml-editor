@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Port extends Rectangle {
 
-	private List<Line> lines = new ArrayList<Line>();
+	private transient List<Line> lines = new ArrayList<Line>();
 
 	public void setPort(int centerX, int centerY) {
 		int x = centerX - 5;

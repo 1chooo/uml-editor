@@ -10,7 +10,7 @@ import utils.CONFIG;
 public class MenuBar extends JMenuBar {
 
     private Canvas canvas;
-    private MenuBarListener menuBarListener;
+    private transient MenuBarListener menuBarListener;
 
     public MenuBar() {
         initialize();

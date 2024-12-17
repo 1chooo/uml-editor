@@ -23,15 +23,15 @@ import shapes.Line;
 import shapes.Shape;
 
 public class Canvas extends JPanel {
-	public Shape selectedObject = null;
-	public Line tmpLine = null;
+	public transient Shape selectedObject = null;
+	public transient Line tmpLine = null;
 	public Rectangle selectedArea = null;
 
-	protected Mode currrentMode = null;
+	protected transient Mode currrentMode = null;
 
-	private EventListener listener = null;
-	private List<Shape> shapes = new ArrayList<Shape>();
-	private List<Line> lines = new ArrayList<Line>();
+	private transient EventListener listener = null;
+	private transient List<Shape> shapes = new ArrayList<Shape>();
+	private transient List<Line> lines = new ArrayList<Line>();
 
 	private static Canvas instance = null;
 
