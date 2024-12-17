@@ -30,8 +30,8 @@ public class Canvas extends JPanel {
 	protected transient Mode currrentMode = null;
 
 	private transient EventListener listener = null;
-	private transient List<Shape> shapes = new ArrayList<Shape>();
-	private transient List<Line> lines = new ArrayList<Line>();
+	private transient List<Shape> shapes = new ArrayList<>();
+	private transient List<Line> lines = new ArrayList<>();
 
 	private static Canvas instance = null;
 
