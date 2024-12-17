@@ -4,7 +4,6 @@ import java.awt.Graphics;
 
 public class AssociationLine extends Line {
 
-	// constructor
 	public AssociationLine(int x1, int y1, int x2, int y2) {
 		this.x1 = x1;
 		this.y1 = y1;
@@ -12,13 +11,20 @@ public class AssociationLine extends Line {
 		this.y2 = y2;
 	}
 
-	// public method
 	public void draw(Graphics g) {
-		int width = 10, height = 10;
-		int dx = x2 - x1, dy = y2 - y1;
-		double D = Math.sqrt(dx * dx + dy * dy);
-		double xm = D - width, xn = xm, ym = height, yn = -height, x;
-		double sin = dy / D, cos = dx / D;
+		int width = 10;
+		int height = 10;
+		int deltaX = x2 - x1;
+		int deltaY = y2 - y1;
+
+		double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+		double xm = distance - width;
+		double xn = xm;
+		double ym = height;
+		double yn = -height;
+		double x;
+		double sin = deltaY / distance;
+		double cos = deltaX / distance;
 
 		x = xm * cos - ym * sin + x1;
 		ym = xm * sin + ym * cos + y1;

@@ -67,19 +67,19 @@ public class SidePanel extends JToolBar {
 		this.add(useCaseBtn);
 	}
 
-	private JButton createButton(String name, String imgPath, Mode m) {
-		JButton Btn = new JButton();
-		Btn.setFocusPainted(false);
+	private JButton createButton(String name, String imgPath, Mode mode) {
+		JButton btn = new JButton();
+		btn.setFocusPainted(false);
 
-		Btn.setLayout(new BorderLayout());
+		btn.setLayout(new BorderLayout());
 		JLabel txt = new JLabel(name, SwingConstants.CENTER);
 		JLabel img = new JLabel(new ImageIcon(imgPath));
-		Btn.add(img, BorderLayout.WEST);
-		Btn.add(txt, BorderLayout.CENTER);
+		btn.add(img, BorderLayout.WEST);
+		btn.add(txt, BorderLayout.CENTER);
 
-		Btn.setBackground(new java.awt.Color(255, 255, 255));
+		btn.setBackground(new java.awt.Color(255, 255, 255));
 
-		Btn.addActionListener(new ActionListener() {
+		btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (curBtn != null)
 					curBtn.setBackground(new java.awt.Color(255, 255, 255));
@@ -87,11 +87,11 @@ public class SidePanel extends JToolBar {
 				curBtn = (JButton) e.getSource();
 				curBtn.setBackground(new java.awt.Color(120, 120, 120));
 
-				canvas.setCurrrentMode(m);
+				canvas.setCurrrentMode(mode);
 				canvas.selectedObject = null;
 			}
 		});
 
-		return Btn;
+		return btn;
 	}
 }
