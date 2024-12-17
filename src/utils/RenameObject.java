@@ -2,7 +2,6 @@ package utils;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
@@ -62,27 +61,15 @@ public class RenameObject extends JFrame {
     }
 
     public ActionListener getTextFieldListener() {
-        return new ActionListener() {
-            public void actionPerformed(ActionEvent ev) {
-                onOKButtonClicked();
-            }
-        };
+        return ev -> onOKButtonClicked();
     }
 
     public ActionListener getTextOKListener() {
-        return new ActionListener() {
-            public void actionPerformed(ActionEvent ev) {
-                onOKButtonClicked();
-            }
-        };
+        return ev -> onOKButtonClicked();
     }
 
     public ActionListener getTextCancelListener() {
-        return new ActionListener() {
-            public void actionPerformed(ActionEvent ev) {
-                onCancelButtonClicked();
-            }
-        };
+        return ev -> onCancelButtonClicked();
     }
 
     private void onOKButtonClicked() {

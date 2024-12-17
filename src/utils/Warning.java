@@ -1,9 +1,6 @@
 package utils;
 
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -35,11 +32,7 @@ public class Warning extends JFrame {
 
         panel = new JPanel();
         JButton ok = new JButton("OK");
-        ok.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-            }
-        });
+        ok.addActionListener(e -> dispose());
         panel.add(ok);
         getContentPane().add(panel);
     }
