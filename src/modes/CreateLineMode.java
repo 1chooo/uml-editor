@@ -10,8 +10,10 @@ import shapes.GeneralizationLine;
 import shapes.Line;
 import shapes.Shape;
 import utils.MODES;
+import java.util.logging.Logger;
 
 public class CreateLineMode extends Mode {
+	private static final Logger logger = Logger.getLogger(CreateLineMode.class.getName());
 
 	private String lineMode;
 	private List<Shape> shapes;
@@ -27,14 +29,14 @@ public class CreateLineMode extends Mode {
 	public Line createLine(String type, Point start, Point end) {
 		Line line = null;
 
-		if(type.equals(MODES.ASSOCIATION_LINE)){
+		if (type.equals(MODES.ASSOCIATION_LINE)) {
 			line = new AssociationLine(start.x, start.y, end.x, end.y);
-		} else if(type.equals(MODES.GENERALIZATION_LINE)){
+		} else if (type.equals(MODES.GENERALIZATION_LINE)) {
 			line = new GeneralizationLine(start.x, start.y, end.x, end.y);
-		} else if(type.equals(MODES.COMPOSITION_LINE)) {
+		} else if (type.equals(MODES.COMPOSITION_LINE)) {
 			line = new CompositionLine(start.x, start.y, end.x, end.y);
 		} else {
-			System.out.println("Unsupported Line Type");
+			logger.warning("Unsupported Line Type");
 		}
 		return line;
 	}
