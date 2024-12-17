@@ -57,7 +57,7 @@ public class RenameObject extends JFrame {
 
         setLocationRelativeTo(null);
         setSize(400, 150);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setVisible(true);
     }
 

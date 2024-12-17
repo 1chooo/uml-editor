@@ -47,7 +47,7 @@ public class Warning extends JFrame {
     private void setupFrame(int width) {
         setLocationRelativeTo(null);
         setSize(width, 120);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setVisible(true);
     }
 }

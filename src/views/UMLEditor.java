@@ -35,8 +35,7 @@ public class UMLEditor extends JFrame {
 		this.getContentPane().add(canvas, BorderLayout.EAST);
 
 		setSize(width, height);
-		// TODO: add some cases for deciding the status of the Application
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 		setVisible(true);
     }
 }
