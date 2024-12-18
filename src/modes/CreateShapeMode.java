@@ -16,6 +16,7 @@ public class CreateShapeMode extends Mode {
         this.shapeMode = shapeMode;
     }
 
+    @Override
     public void mousePressed(MouseEvent e) {
         logger.info("x: " + e.getX() + "  y: " + e.getY());
         Shape object = null;
