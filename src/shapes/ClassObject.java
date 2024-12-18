@@ -29,7 +29,7 @@ public class ClassObject extends BasicObject {
 
 		// set object name
 		int stringWidth = g.getFontMetrics(font).stringWidth(name);
-		double empty = (Math.abs(x1 - x2) - stringWidth) / 2;
+		double empty = (Math.abs(x1 - x2) - stringWidth) / 2.0;
 		g.setFont(font);
 		g.drawString(name, x1 + (int) empty, y1 + 25);
 	}

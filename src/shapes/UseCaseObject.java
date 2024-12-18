@@ -26,7 +26,7 @@ public class UseCaseObject extends BasicObject {
 
 		// set obj name
 		int stringWidth = g.getFontMetrics(font).stringWidth(name);
-		double empty = (120 - stringWidth) / 2;
+		double empty = (120 - stringWidth) / 2.0;
 		g.setFont(font);
 
 		g.drawString(name, x1 + (int) empty, y1 + 50);

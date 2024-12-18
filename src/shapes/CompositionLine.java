@@ -12,11 +12,19 @@ public class CompositionLine extends Line {
 	}
 
 	public void draw(Graphics g) {
-		int width = 10, height = 10;
-		int dx = x2 - x1, dy = y2 - y1;
-		double D = Math.sqrt(dx * dx + dy * dy);
-		double xm = D - width, xn = xm, ym = height, yn = -height, x;
-		double sin = dy / D, cos = dx / D;
+		int width = 10;
+		int height = 10;
+		int deltaX = x2 - x1;
+		int deltaY = y2 - y1;
+
+		double distance = Math.sqrt((double) deltaX * deltaX + deltaY * deltaY);
+		double xm = distance - width;
+		double xn = xm;
+		double ym = height;
+		double yn = -height;
+		double x;
+		double sin = deltaY / distance;
+		double cos = deltaX / distance;
 
 		x = xm * cos - ym * sin + x1;
 		ym = xm * sin + ym * cos + y1;
@@ -26,8 +34,8 @@ public class CompositionLine extends Line {
 		yn = xn * sin + yn * cos + y1;
 		xn = x;
 
-		double xk = (height * 2 / D) * x1 + ((D - height * 2) / D) * x2;
-		double yk = (height * 2 / D) * y1 + ((D - height * 2) / D) * y2;
+		double xk = (height * 2 / distance) * x1 + ((distance - height * 2) / distance) * x2;
+		double yk = (height * 2 / distance) * y1 + ((distance - height * 2) / distance) * y2;
 
 		int[] xpoints = { x2, (int) xm, (int) xk, (int) xn };
 		int[] ypoints = { y2, (int) ym, (int) yk, (int) yn };

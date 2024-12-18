@@ -17,7 +17,7 @@ public class AssociationLine extends Line {
 		int deltaX = x2 - x1;
 		int deltaY = y2 - y1;
 
-		double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+		double distance = Math.sqrt((double) deltaX * deltaX + deltaY * deltaY);
 		double xm = distance - width;
 		double xn = xm;
 		double ym = height;
