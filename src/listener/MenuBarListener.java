@@ -1,6 +1,5 @@
 package listener;
 
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -21,70 +20,51 @@ public class MenuBarListener {
     }
 
     public ActionListener getAboutListener() {
-        return new ActionListener() {
-            public void actionPerformed(ActionEvent ev) {
-                JOptionPane.showMessageDialog(null, HELPER.ABOUT_UML_MESSAGE);
-            }
-        };
+        return ev -> JOptionPane.showMessageDialog(null, HELPER.ABOUT_UML_MESSAGE);
     }
 
     public ActionListener getVersionListener() {
-        return new ActionListener() {
-            public void actionPerformed(ActionEvent ev) {
-                JOptionPane.showMessageDialog(null, HELPER.UML_VERSION_MESSAGE);
-            }
-        };
+        return ev -> JOptionPane.showMessageDialog(null, HELPER.UML_VERSION_MESSAGE);
     }
 
     public ActionListener getQuitListener() {
-        return new ActionListener() {
-            public void actionPerformed(ActionEvent ev) {
-                System.exit(0);
-            }
-        };
+        return ev -> System.exit(0);
     }
 
     public ActionListener getChangeNameListener() {
-        return new ActionListener() {
-            public void actionPerformed(ActionEvent ev) {
-                if (canvas.selectedObject != null)
-                    new RenameObject(canvas.selectedObject.name);
-                else
-                    new Warning(HELPER.SELECT_OBJECT_WARNING, 300);
-            }
+        return ev -> {
+            if (canvas.selectedObject != null)
+                new RenameObject(canvas.selectedObject.name);
+            else
+                new Warning(HELPER.SELECT_OBJECT_WARNING, 300);
         };
     }
 
     public ActionListener getGroupListener() {
-        return new ActionListener() {
-            public void actionPerformed(ActionEvent ev) {
-                shapes = canvas.getShapes();
-                System.out.println("shapes size :" + shapes.size());
-                int count = 0;
-                for (int i = 0; i < shapes.size(); i++) {
-                    Shape shape = shapes.get(i);
-                    if (shape.isSelected)
-                        count++;
-                }
-
-                if (count >= 2)
-                    canvas.createGroup();
-                else
-                    new Warning(HELPER.GET_GROUP_WARNING, 300);
+        return ev -> {
+            shapes = canvas.getShapes();
+            System.out.println("shapes size :" + shapes.size());
+            int count = 0;
+            for (Shape shape : shapes) {
+                if (shape.isSelected)
+                    count++;
             }
+
+            if (count >= 2)
+                canvas.createGroup();
+            else
+                new Warning(HELPER.GET_GROUP_WARNING, 300);
         };
     }
 
     public ActionListener getUnGroupListener() {
-        return new ActionListener() {
-            public void actionPerformed(ActionEvent ev) {
-                Shape shape = canvas.selectedObject;
+        return ev -> {
+            Shape shape = canvas.selectedObject;
 
-                if (shape != null && (shape instanceof Group))
-                    canvas.unGroup();
-                else
-                    new Warning(HELPER.GET_UNGROUP_WARNING, 300);
-            }
+            if (shape != null && (shape instanceof Group))
+                canvas.unGroup();
+            else
+                new Warning(HELPER.GET_UNGROUP_WARNING, 300);
         };
     }
 }
