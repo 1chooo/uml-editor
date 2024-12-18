@@ -2,13 +2,15 @@ package modes;
 
 import java.awt.Point;
 import java.awt.Rectangle;
+import java.awt.event.MouseEvent;
+
 import java.util.List;
+import java.util.logging.Logger;
 
 import shapes.Shape;
 
-import java.awt.event.MouseEvent;
-
 public class SelectMode extends Mode {
+	private static final Logger logger = Logger.getLogger(SelectMode.class.getName());
 	private List<Shape> shapes;
 	private Point firstMouse;
 	private int inside = -5;
@@ -19,7 +21,7 @@ public class SelectMode extends Mode {
 	@Override
 	public void mousePressed(MouseEvent e) {
 		firstMouse = e.getPoint();
-		System.out.println("x: " + e.getX() + "  y: " + e.getY());
+		logger.info("x: " + e.getX() + "  y: " + e.getY());
 		shapes = canvas.getShapes();
 
 		for (int i = 0; i < shapes.size(); i++) {
@@ -62,7 +64,7 @@ public class SelectMode extends Mode {
 			int h = Math.abs(firstMouse.y - e.getPoint().y);
 			canvas.selectedArea.setSize(w, h);
 
-			System.out.println(canvas.selectedArea);
+			logger.info(canvas.selectedArea.toString());
 			shapes = canvas.getShapes();
 			for (int i = 0; i < shapes.size(); i++) {
 				Shape shape = shapes.get(i);
