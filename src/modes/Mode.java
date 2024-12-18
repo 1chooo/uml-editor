@@ -10,7 +10,7 @@ public abstract class Mode
 		implements MouseListener, MouseMotionListener {
 	protected Canvas canvas;
 
-	public Mode() {
+	protected Mode() {
 		canvas = Canvas.getInstance();
 	}
 	
