@@ -2,8 +2,6 @@ package components;
 
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JToolBar;
 import javax.swing.JButton;
@@ -15,6 +13,7 @@ import modes.CreateLineMode;
 import modes.CreateShapeMode;
 import modes.Mode;
 import modes.SelectMode;
+
 import utils.MODES;
 
 public class SidePanel extends JToolBar {
@@ -79,17 +78,15 @@ public class SidePanel extends JToolBar {
 
 		btn.setBackground(new java.awt.Color(255, 255, 255));
 
-		btn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (curBtn != null)
-					curBtn.setBackground(new java.awt.Color(255, 255, 255));
+		btn.addActionListener(e -> {
+			if (curBtn != null)
+				curBtn.setBackground(new java.awt.Color(255, 255, 255));
 
-				curBtn = (JButton) e.getSource();
-				curBtn.setBackground(new java.awt.Color(120, 120, 120));
+			curBtn = (JButton) e.getSource();
+			curBtn.setBackground(new java.awt.Color(120, 120, 120));
 
-				canvas.setCurrrentMode(mode);
-				canvas.selectedObject = null;
-			}
+			canvas.setCurrrentMode(mode);
+			canvas.selectedObject = null;
 		});
 
 		return btn;
