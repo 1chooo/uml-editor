@@ -14,8 +14,8 @@ public class UMLEditor extends JFrame {
 	private SidePanel toolbar;
 	private MenuBar menubar;
 	private Canvas canvas;
-	private int width = 1280;
-	private int height = 720;
+	private int windowWidth = 1280;
+	private int windowHeight = 720;
 
 	public UMLEditor() {
 		super(CONFIG.APP_NAME);
@@ -34,7 +34,7 @@ public class UMLEditor extends JFrame {
 		canvas = Canvas.getInstance();
 		this.getContentPane().add(canvas, BorderLayout.EAST);
 
-		setSize(width, height);
+		setSize(windowWidth, windowHeight);
 		setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 		setVisible(true);
     }
