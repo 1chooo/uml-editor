@@ -1,12 +1,12 @@
 package utils;
 
 public class MODES {
-    public static String SELECT = "Select";
-    public static String ASSOCIATION_LINE = "AssociationLine";
-    public static String GENERALIZATION_LINE = "GeneralizationLine";
-    public static String COMPOSITION_LINE = "CompositionLine";
-    public static String CLASS = "Class";
-    public static String USE_CASE = "Use Case";
+    public static final String SELECT = "Select";
+    public static final String ASSOCIATION_LINE = "AssociationLine";
+    public static final String GENERALIZATION_LINE = "GeneralizationLine";
+    public static final String COMPOSITION_LINE = "CompositionLine";
+    public static final String CLASS = "Class";
+    public static final String USE_CASE = "Use Case";
 
     public static String getModeButtonName(String mode) {
         if (mode.equals(SELECT)) {
