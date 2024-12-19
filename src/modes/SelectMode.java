@@ -62,9 +62,13 @@ public class SelectMode extends Mode {
 		if (canvas.selectedObject == null) {
 			int w = Math.abs(firstMouse.x - e.getPoint().x);
 			int h = Math.abs(firstMouse.y - e.getPoint().y);
+
 			canvas.selectedArea.setSize(w, h);
 
-			logger.info(canvas.selectedArea.toString());
+			if (canvas.selectedArea != null) {
+				logger.info(canvas.selectedArea.toString());
+			}
+
 			shapes = canvas.getShapes();
 			for (int i = 0; i < shapes.size(); i++) {
 				Shape shape = shapes.get(i);
@@ -72,6 +76,7 @@ public class SelectMode extends Mode {
 						&& canvas.withinSelectedArea(shape))
 					shape.isSelected = true;
 			}
+
 			canvas.selectedArea = null;
 		}
 		canvas.repaint();
