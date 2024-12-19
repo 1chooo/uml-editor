@@ -4,9 +4,10 @@ import java.awt.Rectangle;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class Port extends Rectangle {
-
+	private static final Logger logger = Logger.getLogger(Port.class.getName());
 	private transient List<Line> lines = new ArrayList<Line>();
 
 	public void setPort(int centerX, int centerY) {
@@ -20,7 +21,7 @@ public class Port extends Rectangle {
 
 	public void addLine(Line line) {
 		lines.add(line);
-		System.out.println(lines);
+		logger.info(lines.toString());
 	}
 
 	public void deleteLine(Line line) {

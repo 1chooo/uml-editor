@@ -1,7 +1,8 @@
 package listener;
 
-import java.awt.event.ActionListener;
 import java.util.List;
+import java.util.logging.Logger;
+import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 import components.Canvas;
@@ -12,6 +13,7 @@ import utils.RenameObject;
 import utils.Warning;
 
 public class MenuBarListener {
+    private static final Logger logger = Logger.getLogger(MenuBarListener.class.getName());
     private Canvas canvas;
     private List<Shape> shapes;
 
@@ -43,7 +45,7 @@ public class MenuBarListener {
     public ActionListener getGroupListener() {
         return ev -> {
             shapes = canvas.getShapes();
-            System.out.println("shapes size :" + shapes.size());
+            logger.info("shapes size: " + shapes.size());
             int count = 0;
             for (Shape shape : shapes) {
                 if (shape.isSelected)
