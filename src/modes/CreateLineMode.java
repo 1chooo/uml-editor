@@ -22,7 +22,6 @@ public class CreateLineMode extends Mode {
 	private int port1;
 	private int port2;
 	private Point point1;
-	private Point point2;
 
 	public CreateLineMode(String lineMode) {
 		this.lineMode = lineMode;
@@ -61,7 +60,7 @@ public class CreateLineMode extends Mode {
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		if (point1 != null) {
-			point2 = findObject(e.getPoint(), 2);
+			Point point2 = findObject(e.getPoint(), 2);
 			if (point2 != null && shape1 != shape2) {
 				Line line = createLine(lineMode, point1, point2);
 				canvas.addLine(line);
