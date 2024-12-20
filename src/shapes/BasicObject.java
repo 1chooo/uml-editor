@@ -8,16 +8,14 @@ public abstract class BasicObject extends Shape {
 
 	private int width;
 	private int height;
-	private int moveX;
-	private int moveY;
 	protected Port[] ports = new Port[4];
 
 	public abstract void draw(Graphics g);
 
 	@Override
 	public void setLocation(Point p1, Point p2) {
-		moveX = p1.x - p2.x;
-		moveY = p1.y - p2.y;
+		int moveX = p1.x - p2.x;
+		int moveY = p1.y - p2.y;
 		this.x1 += moveX;
 		this.y1 += moveY;
 		this.x2 = getWidth() + x1;
