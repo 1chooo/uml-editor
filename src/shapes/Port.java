@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 public class Port extends Rectangle {
 	private static final Logger logger = Logger.getLogger(Port.class.getName());
-	private transient List<Line> lines = new ArrayList<Line>();
+	private transient List<Line> lines = new ArrayList<>();
 
 	public void setPort(int centerX, int centerY) {
 		int x = centerX - 5;
