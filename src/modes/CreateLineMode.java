@@ -73,7 +73,6 @@ public class CreateLineMode extends Mode {
 			}
 			canvas.tmpLine = null;
 			point1 = null;
-			point2 = null;
 		}
 	}
 
