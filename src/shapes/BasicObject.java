@@ -6,8 +6,10 @@ import java.awt.Polygon;
 
 public abstract class BasicObject extends Shape {
 
-	private int width, height;
-	private int moveX, moveY;
+	private int width;
+	private int height;
+	private int moveX;
+	private int moveY;
 	protected Port[] ports = new Port[4];
 
 	public abstract void draw(Graphics g);
