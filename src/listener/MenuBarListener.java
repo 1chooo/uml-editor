@@ -69,7 +69,7 @@ public class MenuBarListener {
         return ev -> {
             Shape shape = canvas.selectedObject;
 
-            if (shape != null && (shape instanceof Group))
+            if (shape instanceof Group)
                 canvas.unGroup();
             else
                 new Warning(HELPER.GET_UNGROUP_WARNING, 300);
