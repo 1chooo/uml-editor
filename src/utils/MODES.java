@@ -2,31 +2,52 @@ package utils;
 
 public class MODES {
     public static final String SELECT = "Select";
-    public static final String ASSOCIATION_LINE = "AssociationLine";
-    public static final String GENERALIZATION_LINE = "GeneralizationLine";
-    public static final String COMPOSITION_LINE = "CompositionLine";
+    public static final String ASSOCIATION_LINE = "Association Line";
+    public static final String GENERALIZATION_LINE = "Generalization Line";
+    public static final String COMPOSITION_LINE = "Composition Line";
     public static final String CLASS = "Class";
     public static final String USE_CASE = "Use Case";
 
     public static String getModeButtonName(String mode) {
         if (mode.equals(SELECT)) {
-            return "Select";
+            return str2HTML(SELECT);
         } else if (mode.equals(ASSOCIATION_LINE)) {
-            return "<html>Association<br>Line</html>";
+            return str2HTML(ASSOCIATION_LINE);
         } else if (mode.equals(GENERALIZATION_LINE)) {
-            return "<html>Generalization<br>Line</html>";
+            return str2HTML(GENERALIZATION_LINE);
         } else if (mode.equals(COMPOSITION_LINE)) {
-            return "<html>Composition<br>Line</html>";
+            return str2HTML(COMPOSITION_LINE);
         } else if (mode.equals(CLASS)) {
-            return "Class";
+            return str2HTML(CLASS);
         } else if (mode.equals(USE_CASE)) {
-            return "Use Case";
+            return str2HTML(USE_CASE);
         } else {
             return "";
         }
     }
+
+    private static String str2HTML(String str) {
+        if (str.contains(" ")) {
+            String[] words = str.split(" ");
+            StringBuilder htmlString = new StringBuilder("<html>");
+
+            for (int i = 0; i < words.length; i++) {
+                htmlString.append(words[i]);
+                if (i < words.length - 1) {
+                    htmlString.append("<br>");
+                }
+            }
+            
+            htmlString.append("</html>");
+            
+            return htmlString.toString();
+        } else {
+            return "<html>" + str + "</html>";
+        }
+    }
+
     public static String getModeImagePath(String mode) {
-        if(mode.equals(SELECT)){
+        if (mode.equals(SELECT)) {
             return "imgs/select.png";
         } else if (mode.equals(ASSOCIATION_LINE)) {
             return "imgs/association-line.png";
