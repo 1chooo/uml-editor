@@ -5,6 +5,7 @@ import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import shapes.Shape;
@@ -65,9 +66,9 @@ public class SelectMode extends Mode {
 
 			canvas.selectedArea.setSize(w, h);
 
-			if (canvas.selectedArea != null) {
-				logger.info(canvas.selectedArea.toString());
-			}
+			if (logger.isLoggable(Level.INFO)) {
+                logger.info(String.format("shapes size: %d", shapes.size()));
+            }
 
 			shapes = canvas.getShapes();
 			for (int i = 0; i < shapes.size(); i++) {

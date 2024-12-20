@@ -2,6 +2,7 @@ package listener;
 
 import java.util.List;
 import java.util.logging.Logger;
+import java.util.logging.Level;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
@@ -45,17 +46,22 @@ public class MenuBarListener {
     public ActionListener getGroupListener() {
         return ev -> {
             shapes = canvas.getShapes();
-            logger.info("shapes size: " + shapes.size());
+
             int count = 0;
             for (Shape shape : shapes) {
                 if (shape.isSelected)
                     count++;
             }
 
-            if (count >= 2)
+            if (count >= 2) {
                 canvas.createGroup();
-            else
+
+                if (logger.isLoggable(Level.INFO)) {
+                    logger.info(String.format("shapes size: %d", shapes.size()));
+                }
+            } else {
                 new Warning(HELPER.GET_GROUP_WARNING, 300);
+            }
         };
     }
 
