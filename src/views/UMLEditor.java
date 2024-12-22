@@ -11,9 +11,6 @@ import utils.CONFIG;
 
 public class UMLEditor extends JFrame {
 
-	private SidePanel toolbar;
-	private MenuBar menubar;
-	private Canvas canvas;
 	private int windowWidth = 1280;
 	private int windowHeight = 720;
 
@@ -23,15 +20,15 @@ public class UMLEditor extends JFrame {
 	}
 
     private void initComponents() {
-        toolbar = new SidePanel();
+        SidePanel toolbar = new SidePanel();
 		toolbar.setOpaque(true);
 		this.getContentPane().setLayout(new BorderLayout());
 		this.getContentPane().add(toolbar, BorderLayout.WEST);
 
-		menubar = new MenuBar();
+		MenuBar menubar = new MenuBar();
 		this.setJMenuBar(menubar);
 
-		canvas = Canvas.getInstance();
+		Canvas canvas = Canvas.getInstance();
 		this.getContentPane().add(canvas, BorderLayout.EAST);
 
 		setSize(windowWidth, windowHeight);
