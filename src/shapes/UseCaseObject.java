@@ -6,8 +6,8 @@ import java.awt.Graphics;
 public class UseCaseObject extends BasicObject {
 
 	public UseCaseObject(int x1, int y1, String name) {
-		this.setWidth(120);;
-		this.setHeight(90);;
+		this.setWidth(120);
+		this.setHeight(90);
 		this.x1 = x1;
 		this.y1 = y1;
 		this.x2 = this.getWidth() + x1;

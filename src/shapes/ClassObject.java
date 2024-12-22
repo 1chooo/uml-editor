@@ -6,8 +6,8 @@ import java.awt.Graphics;
 public class ClassObject extends BasicObject {
 
 	public ClassObject(int x1, int y1, String name) {
-		this.setWidth(100);;
-		this.setHeight(120);;
+		this.setWidth(100);
+		this.setHeight(120);
 		this.x1 = x1;
 		this.y1 = y1;
 		this.x2 = this.getWidth() + x1;
