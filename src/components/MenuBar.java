@@ -9,7 +9,6 @@ import utils.CONFIG;
 
 public class MenuBar extends JMenuBar {
 
-    private Canvas canvas;
     private transient MenuBarListener menuBarListener;
 
     public MenuBar() {
@@ -17,7 +16,7 @@ public class MenuBar extends JMenuBar {
     }
 
     private void initialize() {
-        canvas = Canvas.getInstance();
+        Canvas canvas = Canvas.getInstance();
         menuBarListener = new MenuBarListener(canvas);
         createUmlEditorMenu();
         createFileMenu();
