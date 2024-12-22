@@ -36,7 +36,7 @@ public class SelectMode extends Mode {
 		}
 		if (inside < 0) {
 			deselectAll();
-			canvas.selectedArea = new Rectangle();
+			canvas.setSelectedArea(new Rectangle());
 		}
 		canvas.repaint();
 	}
@@ -52,7 +52,7 @@ public class SelectMode extends Mode {
 			int top = Math.min(firstMouse.y, e.getPoint().y);
 			int w = Math.abs(firstMouse.x - e.getPoint().x);
 			int h = Math.abs(firstMouse.y - e.getPoint().y);
-			canvas.selectedArea.setBounds(left, top, w, h);
+			canvas.getSelectedArea().setBounds(left, top, w, h);
 
 			canvas.repaint();
 		}
@@ -64,28 +64,28 @@ public class SelectMode extends Mode {
 			int w = Math.abs(firstMouse.x - e.getPoint().x);
 			int h = Math.abs(firstMouse.y - e.getPoint().y);
 
-			canvas.selectedArea.setSize(w, h);
+			canvas.getSelectedArea().setSize(w, h);
 
 			if (logger.isLoggable(Level.INFO)) {
-                logger.info(String.format("shapes size: %d", shapes.size()));
-            }
+				logger.info(String.format("shapes size: %d", shapes.size()));
+			}
 
 			shapes = canvas.getShapes();
 			for (int i = 0; i < shapes.size(); i++) {
 				Shape shape = shapes.get(i);
-				if (canvas.selectedArea != null
+				if (canvas.getSelectedArea() != null
 						&& canvas.withinSelectedArea(shape))
 					shape.isSelected = true;
 			}
 
-			canvas.selectedArea = null;
+			canvas.setSelectedArea(null);
 		}
 		canvas.repaint();
 	}
 
 	private void deselectAll() {
 		canvas.selectedObject = null;
-		canvas.selectedArea = null;
+		canvas.setSelectedArea(null);
 
 		shapes = canvas.getShapes();
 		for (int i = 0; i < shapes.size(); i++) {

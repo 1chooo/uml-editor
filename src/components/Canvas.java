@@ -25,7 +25,16 @@ import shapes.Shape;
 public class Canvas extends JPanel {
 	public transient Shape selectedObject = null;
 	public transient Line tmpLine = null;
-	public Rectangle selectedArea = null;
+	private Rectangle selectedArea = new Rectangle();
+
+	public Rectangle getSelectedArea() {
+		return selectedArea;
+	}
+
+	public Rectangle setSelectedArea(Rectangle selectedArea) {
+		this.selectedArea = selectedArea;
+		return selectedArea;
+	}
 
 	protected transient Mode currrentMode = null;
 
