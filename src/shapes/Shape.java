@@ -39,25 +39,25 @@ public abstract class Shape {
 	public abstract int isInside(Point p);
 
 	public void drawPort(Graphics g) {
-	};
+	}
 
 	public Port getPort(int index) {
 		return null;
 	}
 
 	public void changeName(String name) {
-	};
+	}
 
 	public void setLocation(Point mouse, Point point) {
-	};
+	}
 
 	public void setLocation() {
-	};
+	}
 
 	public void drawGroup(Graphics g) {
-	};
+	}
 
 	public Shape getSelectedObject() {
 		return null;
-	};
+	}
 }
