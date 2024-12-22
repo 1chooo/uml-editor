@@ -23,9 +23,18 @@ import shapes.Line;
 import shapes.Shape;
 
 public class Canvas extends JPanel {
-	public transient Shape selectedObject = null;
+	private transient Shape selectedObject = null;
 	public transient Line tmpLine = null;
 	private Rectangle selectedArea = new Rectangle();
+
+	public Shape getSelectedObject() {
+		return selectedObject;
+	}
+
+	public void setSelectedObject(Shape selectedObject) {
+		this.selectedObject = selectedObject;
+	}
+
 
 	public Rectangle getSelectedArea() {
 		return selectedArea;
@@ -70,18 +79,18 @@ public class Canvas extends JPanel {
 	public void createGroup() {
 		Group group = new Group();
 		List<Shape> selectedShapes = new ArrayList<>();
-	
+
 		// Traverse all Shape objects to find the selected ones at first
 		for (Shape shape : shapes)
 			if (shape.isSelected)
 				selectedShapes.add(shape);
-	
+
 		for (Shape shape : selectedShapes) {
 			shape.isSelected = false;
 			group.addShape(shape);
 			shapes.remove(shape);
 		}
-	
+
 		group.setEdge();
 		shapes.add(group);
 		selectedObject = null;
@@ -90,7 +99,7 @@ public class Canvas extends JPanel {
 	public void unGroup() {
 		Group group = (Group) selectedObject;
 		List<Shape> inGroup = group.getShapes();
-	
+
 		shapes.addAll(inGroup);
 		shapes.remove(selectedObject);
 		selectedObject = null;

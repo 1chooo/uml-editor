@@ -79,7 +79,7 @@ public class RenameObject extends JFrame {
             new Warning(
                     HELPER.RENAME_LENGTH_WARNING, 400);
         } else {
-            canvas.selectedObject.changeName(input);
+            canvas.getSelectedObject().changeName(input);
             dispose();
         }
     }

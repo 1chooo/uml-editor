@@ -30,7 +30,7 @@ public class SelectMode extends Mode {
 			inside = s.isInside(e.getPoint());
 			if (inside >= 0) {
 				deselectAll();
-				canvas.selectedObject = s;
+				canvas.setSelectedObject(s);
 				break;
 			}
 		}
@@ -43,9 +43,9 @@ public class SelectMode extends Mode {
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		if (canvas.selectedObject != null) {
+		if (canvas.getSelectedObject() != null) {
 			if (inside >= 0)
-				canvas.selectedObject.setLocation(e.getPoint(), firstMouse);
+				canvas.getSelectedObject().setLocation(e.getPoint(), firstMouse);
 			firstMouse = e.getPoint();
 		} else {
 			int left = Math.min(firstMouse.x, e.getPoint().x);
@@ -60,7 +60,7 @@ public class SelectMode extends Mode {
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		if (canvas.selectedObject == null) {
+		if (canvas.getSelectedObject() == null) {
 			int w = Math.abs(firstMouse.x - e.getPoint().x);
 			int h = Math.abs(firstMouse.y - e.getPoint().y);
 
@@ -84,7 +84,7 @@ public class SelectMode extends Mode {
 	}
 
 	private void deselectAll() {
-		canvas.selectedObject = null;
+		canvas.setSelectedObject(null);
 		canvas.setSelectedArea(null);
 
 		shapes = canvas.getShapes();

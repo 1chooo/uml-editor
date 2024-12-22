@@ -36,8 +36,8 @@ public class MenuBarListener {
 
     public ActionListener getChangeNameListener() {
         return ev -> {
-            if (canvas.selectedObject != null)
-                new RenameObject(canvas.selectedObject.name);
+            if (canvas.getSelectedObject() != null)
+                new RenameObject(canvas.getSelectedObject().name);
             else
                 new Warning(HELPER.SELECT_OBJECT_WARNING, 300);
         };
@@ -67,7 +67,7 @@ public class MenuBarListener {
 
     public ActionListener getUnGroupListener() {
         return ev -> {
-            Shape shape = canvas.selectedObject;
+            Shape shape = canvas.getSelectedObject();
 
             if (shape instanceof Group)
                 canvas.unGroup();
