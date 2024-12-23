@@ -4,6 +4,7 @@ import java.awt.Rectangle;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Port extends Rectangle {
@@ -21,7 +22,9 @@ public class Port extends Rectangle {
 
 	public void addLine(Line line) {
 		lines.add(line);
-		logger.info(lines.toString());
+		if (logger.isLoggable(Level.INFO)) {
+			logger.info(lines.toString());
+		}
 	}
 
 	public void deleteLine(Line line) {
