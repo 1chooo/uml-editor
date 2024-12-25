@@ -18,9 +18,9 @@ public class RenameObject extends JFrame {
     private JTextField textField;
     private String objectName;
 
-    public RenameObject(String Name) {
+    public RenameObject(String name) {
         super(HELPER.RENAME_MESSAGE);
-        objectName = Name;
+        objectName = name;
         constructGUI();
     }
 
