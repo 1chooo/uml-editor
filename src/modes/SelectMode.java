@@ -75,7 +75,7 @@ public class SelectMode extends Mode {
 				Shape shape = shapes.get(i);
 				if (canvas.getSelectedArea() != null
 						&& canvas.withinSelectedArea(shape))
-					shape.isSelected = true;
+					shape.setSelected(true);
 			}
 
 			canvas.setSelectedArea(null);
@@ -90,7 +90,7 @@ public class SelectMode extends Mode {
 		shapes = canvas.getShapes();
 		for (int i = 0; i < shapes.size(); i++) {
 			Shape shape = shapes.get(i);
-			shape.isSelected = false;
+			shape.setSelected(false);
 		}
 	}
 }

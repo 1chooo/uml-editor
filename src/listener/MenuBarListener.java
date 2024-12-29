@@ -49,7 +49,7 @@ public class MenuBarListener {
 
             int count = 0;
             for (Shape shape : shapes) {
-                if (shape.isSelected)
+                if (shape.isSelected())
                     count++;
             }
 

@@ -14,7 +14,7 @@ public abstract class Shape {
 	protected int y2;
 	protected Font font = new Font(Font.DIALOG, Font.BOLD, 13);
 
-	public boolean isSelected = false;
+	private boolean isSelected = false;
 	public String name;
 	public Canvas canvas = Canvas.getInstance();
 
@@ -32,6 +32,14 @@ public abstract class Shape {
 
 	public int getY2() {
 		return this.y2;
+	}
+
+	public boolean isSelected() {
+		return this.isSelected;
+	}
+
+	public void setSelected(boolean isSelected) {
+		this.isSelected = isSelected;
 	}
 
 	public abstract void draw(Graphics g);

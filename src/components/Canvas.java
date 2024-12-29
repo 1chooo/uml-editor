@@ -82,11 +82,11 @@ public class Canvas extends JPanel {
 
 		// Traverse all Shape objects to find the selected ones at first
 		for (Shape shape : shapes)
-			if (shape.isSelected)
+			if (shape.isSelected())
 				selectedShapes.add(shape);
 
 		for (Shape shape : selectedShapes) {
-			shape.isSelected = false;
+			shape.setSelected(false);
 			group.addShape(shape);
 			shapes.remove(shape);
 		}
@@ -142,7 +142,7 @@ public class Canvas extends JPanel {
 			Shape shape = shapes.get(i);
 			shape.draw(graphics);
 			shape.drawGroup(graphics);
-			if (shape.isSelected)
+			if (shape.isSelected())
 				shape.drawPort(graphics);
 		}
 
