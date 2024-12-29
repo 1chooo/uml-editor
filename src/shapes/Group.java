@@ -10,7 +10,7 @@ import java.awt.Rectangle;
 
 public class Group extends Shape {
 
-	private List<Shape> groupShapes = new ArrayList<Shape>();
+	private List<Shape> groupShapes = new ArrayList<>();
 	private Rectangle groupRec = new Rectangle();
 	private Shape selectedObject = null;
 
