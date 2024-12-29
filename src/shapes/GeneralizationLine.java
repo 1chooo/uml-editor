@@ -11,7 +11,6 @@ public class GeneralizationLine extends Line {
 		this.y2 = y2;
 	}
 
-	// TODO: Change the arrow to hollow (outline), ensuring the line does not pass through the arrow.
 	public void draw(Graphics g) {
 		int width = 10;
 		int height = 10;

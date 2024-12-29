@@ -126,7 +126,6 @@ public class Canvas extends JPanel {
 				&& selectedArea.contains(bottom2));
 	}
 
-	// TODO: Separate paint method into multiple methods
 	@Override
 	public void paint(Graphics graphics) {
 		super.paint(graphics);
