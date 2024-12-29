@@ -52,7 +52,7 @@ public class CreateLineMode extends Mode {
 	public void mouseDragged(MouseEvent e) {
 		if (point1 != null) {
 			Line tmpLine = createLine(lineMode, point1, e.getPoint());
-			canvas.tmpLine = tmpLine;
+			canvas.setTmpLine(tmpLine);
 			canvas.repaint();
 		}
 	}
@@ -71,7 +71,7 @@ public class CreateLineMode extends Mode {
 				shape2.getPort(port2).addLine(line);
 
 			}
-			canvas.tmpLine = null;
+			canvas.setTmpLine(null);
 			point1 = null;
 		}
 	}

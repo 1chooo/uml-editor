@@ -24,26 +24,8 @@ import shapes.Shape;
 
 public class Canvas extends JPanel {
 	private transient Shape selectedObject = null;
-	public transient Line tmpLine = null;
+	private transient Line tmpLine = null;
 	private Rectangle selectedArea = new Rectangle();
-
-	public Shape getSelectedObject() {
-		return selectedObject;
-	}
-
-	public void setSelectedObject(Shape selectedObject) {
-		this.selectedObject = selectedObject;
-	}
-
-
-	public Rectangle getSelectedArea() {
-		return selectedArea;
-	}
-
-	public Rectangle setSelectedArea(Rectangle selectedArea) {
-		this.selectedArea = selectedArea;
-		return selectedArea;
-	}
 
 	protected transient Mode currrentMode = null;
 
@@ -62,6 +44,32 @@ public class Canvas extends JPanel {
 		if (instance == null)
 			instance = new Canvas();
 		return instance;
+	}
+
+	public Shape getSelectedObject() {
+		return selectedObject;
+	}
+
+	public void setSelectedObject(Shape selectedObject) {
+		this.selectedObject = selectedObject;
+	}
+
+	public Rectangle getSelectedArea() {
+		return selectedArea;
+	}
+
+	public Rectangle setSelectedArea(Rectangle selectedArea) {
+		this.selectedArea = selectedArea;
+		return selectedArea;
+	}
+
+	public Line getTmpLine() {
+		return tmpLine;
+	}
+
+	public void setTmpLine(Line tmpLine) {
+		this.tmpLine = tmpLine;
+		repaint(); // Ensure the canvas updates when tmpLine changes
 	}
 
 	public List<Shape> getShapes() {
