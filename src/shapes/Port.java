@@ -37,4 +37,16 @@ public class Port extends Rectangle {
 			line.setLocation();
 		}
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null || getClass() != obj.getClass()) {
+			return false;
+		}
+		Port port = (Port) obj;
+		return this.x == port.x && this.y == port.y && this.width == port.width && this.height == port.height;
+	}
 }
